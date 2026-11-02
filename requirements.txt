@@ -1,0 +1,17 @@
+# Paper: planner, numbers, figures and tests
+numpy<2
+scipy>=1.8
+shapely>=2.0
+casadi>=3.6
+matplotlib>=3.5
+pytest>=7.4
+
+# Monte-Carlo campaigns also need acados 0.6.0 (commit 5033648), built from source:
+#   pip install -e <acados>/interfaces/acados_template
+#   export ACADOS_SOURCE_DIR=<acados> LD_LIBRARY_PATH=<acados>/lib
+
+# Optional, ROS 2 platform in src/ (not used for the paper's results):
+#   ROS 2 Humble and Gazebo Classic from their own installers
+#   ultralytics>=8.0     pest detector in src/multimodal_perception
+#   opencv-python>=4.5
+#   imageio-ffmpeg>=0.4  mission recording

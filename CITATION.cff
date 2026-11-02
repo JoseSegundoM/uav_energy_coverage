@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the HRFEST 2026 paper below."
+title: "Evaluating UAV Coverage Plans Beyond Path Length Using Embedded-Deployable Nonlinear Model Predictive Control (code and data)"
+type: software
+version: "hrfest2026"
+license: MIT
+repository-code: "https://github.com/JoseSegundoM/uav_energy_coverage"
+authors:
+  - family-names: "Segundo Manayay"
+    given-names: "Jose Luis"
+    orcid: "https://orcid.org/0009-0002-9203-8710"
+    email: "jose.segundo.m@uni.pe"
+    affiliation: "Universidad Nacional de Ingeniería (UNI), Faculty of Mechanical Engineering, Lima, Peru"
+  - family-names: "Garay Yovera"
+    given-names: "Javier Yanpier"
+    orcid: "https://orcid.org/0009-0001-1645-8724"
+    affiliation: "Universidad Nacional de Ingeniería (UNI), Faculty of Mechanical Engineering, Lima, Peru"
+  - family-names: "Rodríguez Huiman"
+    given-names: "Francisco Jesús"
+    orcid: "https://orcid.org/0009-0006-6972-2484"
+    affiliation: "Universidad Nacional de Ingeniería (UNI), Faculty of Mechanical Engineering, Lima, Peru"
+  - family-names: "Vilcamiche Fernandez"
+    given-names: "Luis Angel"
+    orcid: "https://orcid.org/0009-0005-7046-6943"
+    affiliation: "Universidad Nacional de Ingeniería (UNI), Faculty of Mechanical Engineering, Lima, Peru"
+keywords:
+  - coverage path planning
+  - model predictive control
+  - energy-aware planning
+  - precision agriculture
+  - benchmarking
+preferred-citation:
+  type: conference-paper
+  title: "Evaluating UAV Coverage Plans Beyond Path Length Using Embedded-Deployable Nonlinear Model Predictive Control"
+  authors:
+    - family-names: "Segundo Manayay"
+      given-names: "Jose Luis"
+    - family-names: "Garay Yovera"
+      given-names: "Javier Yanpier"
+    - family-names: "Rodríguez Huiman"
+      given-names: "Francisco Jesús"
+    - family-names: "Vilcamiche Fernandez"
+      given-names: "Luis Angel"
+  conference:
+    name: "HRFEST 2026"
+  year: 2026

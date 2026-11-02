@@ -1,0 +1,56 @@
+# ---- ROS 2 / colcon ----
+build/
+install/
+log/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# ---- acados codegen (artefactos compilados, no fuente) ----
+*.o
+*.a
+src/uav_nmpc_controller/acados_generated/**/*.o
+nmpc_model/c_generated_code/
+nmpc_model/uav_nmpc_ocp.json
+
+# ---- Pesos de percepción (se versiona weights/.gitkeep, no los .pt) ----
+*.pt
+src/multimodal_perception/weights/*
+!src/multimodal_perception/weights/.gitkeep
+
+# ---- Salidas de misión: se regeneran con una corrida ----
+mission_artifacts/*.csv
+
+# ---- Grabaciones crudas del grabador (se versionan solo las curadas) ----
+media/
+
+# ---- Dependencia compilada localmente (vendorizada, no fuente propia) ----
+src/vision_msgs/
+
+# ---- Andamiaje local de arranque (no forma parte del proyecto) ----
+bootstrap_uav_agricultural.sh
+mission_planner.tar.gz
+
+# ---- Logs ----
+*.log
+
+# ---- Sistema / editor ----
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+
+# ---- Paper HHRFest: artefactos de compilación y rásteres de revisión ----
+paper/build/
+paper/figures/*.png
+
+# PDF profiles
+paper/paper_235_*.pdf
+
+# ---- Local paper builds (reference PDFs live in release/) ----
+paper/paper.pdf
+paper/paper_journal.pdf

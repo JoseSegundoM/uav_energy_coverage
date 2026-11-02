@@ -1,0 +1,14 @@
+material Field/Soil
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture soil.png
+        filtering anisotropic
+      }
+    }
+  }
+}

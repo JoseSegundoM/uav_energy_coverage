@@ -1,0 +1,3 @@
+<?xml version="1.0" ?>
+<sdf version="1.6"><model name="tomato_plants"><static>true</static>
+<link name="unused"/></model></sdf>

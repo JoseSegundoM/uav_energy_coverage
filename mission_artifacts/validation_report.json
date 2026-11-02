@@ -1,0 +1,22 @@
+{
+  "mission_done": true,
+  "n_ref": 2134,
+  "n_odom": 22164,
+  "rmse_pos_m": 0.1485,
+  "e_p50_m": 0.1053,
+  "e_p95_m": 0.2782,
+  "e_max_m": 0.4669,
+  "rmse_tol_m": 0.75,
+  "rmse_pass": true,
+  "rmse_note": "picos breves en giros 180; pasadas rectas ~0.1 m",
+  "coverage_pct": 100.0,
+  "coverage_tol_m": 1.5,
+  "coverage_pass": true,
+  "z_min_m": 6.77,
+  "z_max_m": 7.2,
+  "no_collision": true,
+  "water_stress_mean": 0.4433,
+  "water_stress_note": "radiometría proxy; calibración pendiente",
+  "map_pests_note": "mAP pendiente: requiere dataset papa/arroz",
+  "overall_pass": true
+}

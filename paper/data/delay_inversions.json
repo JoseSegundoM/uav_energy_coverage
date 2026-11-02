@@ -1,0 +1,407 @@
+{
+ "description": "Delay sweep re-run with saved trajectories: NMPC, sigma=0.55, free field, plant 1 kHz (substeps 10), hover fallback, seeds 1000-1009. RMSE and divergence match data/mc_delay_rerun.json for all 40 episodes. An inversion is a transition of the body z-axis to pointing downward.",
+ "generator": "experiments/delay_flip_235/run.sh (HRFEST-2026 workspace) using experiments/v6_agent_06/nmpc_probe.py; acados 5033648",
+ "quaternion_layout": "state[6:10] = (qw,qx,qy,qz)",
+ "episodes": [
+  {
+   "delay_ms": 4.0,
+   "seed": 1000,
+   "inversions": 0,
+   "inverted_fraction": 0.0,
+   "max_tilt_deg": 22.5,
+   "diverged": false,
+   "rmse_m": 0.19940242616417897,
+   "traj_sha256": "2fb8eefeafb33759315cff4370e31efa3085574684a3e0e9d37b70c43afe6db0"
+  },
+  {
+   "delay_ms": 4.0,
+   "seed": 1001,
+   "inversions": 0,
+   "inverted_fraction": 0.0,
+   "max_tilt_deg": 23.9,
+   "diverged": false,
+   "rmse_m": 0.18764726599450332,
+   "traj_sha256": "53b16771b83f850f0000f7aac7963cb709a48ba0bb1650515570917bd463bca4"
+  },
+  {
+   "delay_ms": 4.0,
+   "seed": 1002,
+   "inversions": 0,
+   "inverted_fraction": 0.0,
+   "max_tilt_deg": 30.8,
+   "diverged": false,
+   "rmse_m": 0.20108003034295763,
+   "traj_sha256": "52e1e861934f84dc3a07a437008fc9591f2eb3abafe09526c2c2bdc4f71a1375"
+  },
+  {
+   "delay_ms": 4.0,
+   "seed": 1003,
+   "inversions": 0,
+   "inverted_fraction": 0.0,
+   "max_tilt_deg": 22.9,
+   "diverged": false,
+   "rmse_m": 0.20001313730328674,
+   "traj_sha256": "71a3c1375b4864b48c19a6664f50c3f9f4126ecb5fa91585957f80e9aec96019"
+  },
+  {
+   "delay_ms": 4.0,
+   "seed": 1004,
+   "inversions": 0,
+   "inverted_fraction": 0.0,
+   "max_tilt_deg": 17.8,
+   "diverged": false,
+   "rmse_m": 0.1872758930214992,
+   "traj_sha256": "8a02fbe7cfa71c5562c3c480368f655c0e21bcf18571fa9d80fbfcf95334f3af"
+  },
+  {
+   "delay_ms": 4.0,
+   "seed": 1005,
+   "inversions": 0,
+   "inverted_fraction": 0.0,
+   "max_tilt_deg": 25.1,
+   "diverged": false,
+   "rmse_m": 0.20791761886882082,
+   "traj_sha256": "e923ca5c080c1ac31426c498acb6511277f62ee033a0752c836d6029d2224967"
+  },
+  {
+   "delay_ms": 4.0,
+   "seed": 1006,
+   "inversions": 0,
+   "inverted_fraction": 0.0,
+   "max_tilt_deg": 25.0,
+   "diverged": false,
+   "rmse_m": 0.1997598652089318,
+   "traj_sha256": "ae2c1ef745211f9d2fe4eac1c9695384e1eeecd0f9c4aaae17705093860fb502"
+  },
+  {
+   "delay_ms": 4.0,
+   "seed": 1007,
+   "inversions": 0,
+   "inverted_fraction": 0.0,
+   "max_tilt_deg": 23.1,
+   "diverged": false,
+   "rmse_m": 0.17830936842378234,
+   "traj_sha256": "1a8e3e3fd5ef7ab0975702d26a396faa0e81c94e4694917bb8d2c226a23f62e8"
+  },
+  {
+   "delay_ms": 4.0,
+   "seed": 1008,
+   "inversions": 0,
+   "inverted_fraction": 0.0,
+   "max_tilt_deg": 28.7,
+   "diverged": false,
+   "rmse_m": 0.2080687449685519,
+   "traj_sha256": "0efbda12edab3033383849f5570b26a95a803fd49d8988dbb56488b5f7565da9"
+  },
+  {
+   "delay_ms": 4.0,
+   "seed": 1009,
+   "inversions": 0,
+   "inverted_fraction": 0.0,
+   "max_tilt_deg": 21.9,
+   "diverged": false,
+   "rmse_m": 0.1852319137306542,
+   "traj_sha256": "7c18866b1e76bf9622bd39bd0404711d60c5832b1ccaa2a5b932dbd7eae3a686"
+  },
+  {
+   "delay_ms": 5.0,
+   "seed": 1000,
+   "inversions": 21,
+   "inverted_fraction": 0.1325,
+   "max_tilt_deg": 178.0,
+   "diverged": false,
+   "rmse_m": 0.6115119064496659,
+   "traj_sha256": "41f8bf0b85b9ff82d79e85ba6901b62879aefd4cfe02ff24698f41ffb3f369c0"
+  },
+  {
+   "delay_ms": 5.0,
+   "seed": 1001,
+   "inversions": 18,
+   "inverted_fraction": 0.0937,
+   "max_tilt_deg": 175.7,
+   "diverged": false,
+   "rmse_m": 0.6416827759563078,
+   "traj_sha256": "f11acf2fda70f3e4ff2c4ec63893c9a923a44d593ffb3b1468a3132d4eb89c46"
+  },
+  {
+   "delay_ms": 5.0,
+   "seed": 1002,
+   "inversions": 11,
+   "inverted_fraction": 0.0528,
+   "max_tilt_deg": 178.7,
+   "diverged": false,
+   "rmse_m": 0.6793924773090353,
+   "traj_sha256": "529adcfd0ebeeb07fa70c6fd65b019f57c190cbd84b875d273de919feb6e4f5a"
+  },
+  {
+   "delay_ms": 5.0,
+   "seed": 1003,
+   "inversions": 3,
+   "inverted_fraction": 0.0126,
+   "max_tilt_deg": 139.7,
+   "diverged": false,
+   "rmse_m": 0.5792794001665962,
+   "traj_sha256": "aa2086fdfe341b58cef272a1b1be6744febb83c66d107268ce8c4de827d74d2b"
+  },
+  {
+   "delay_ms": 5.0,
+   "seed": 1004,
+   "inversions": 6,
+   "inverted_fraction": 0.0277,
+   "max_tilt_deg": 178.5,
+   "diverged": false,
+   "rmse_m": 0.5978276520796698,
+   "traj_sha256": "5edc4e7eda56935e25928d13368d33de30adc7068c154a9645bb80b43571cf14"
+  },
+  {
+   "delay_ms": 5.0,
+   "seed": 1005,
+   "inversions": 18,
+   "inverted_fraction": 0.0765,
+   "max_tilt_deg": 178.3,
+   "diverged": false,
+   "rmse_m": 0.71980702216774,
+   "traj_sha256": "34763037b833dfbc258d6ea8b7cd6f8df48b8b3a72236da7a6f9d97612ece25d"
+  },
+  {
+   "delay_ms": 5.0,
+   "seed": 1006,
+   "inversions": 7,
+   "inverted_fraction": 0.0285,
+   "max_tilt_deg": 171.6,
+   "diverged": false,
+   "rmse_m": 0.6152647341971541,
+   "traj_sha256": "49660c632090e1415a6a2802ea40c85e7f745fd35c61a2249f42a78329fb121f"
+  },
+  {
+   "delay_ms": 5.0,
+   "seed": 1007,
+   "inversions": 8,
+   "inverted_fraction": 0.0425,
+   "max_tilt_deg": 170.6,
+   "diverged": false,
+   "rmse_m": 0.5340460444062533,
+   "traj_sha256": "9861d458f03dc9bbe074113010102aa57bf3479ddb55726f3dc665e9e8fb45e5"
+  },
+  {
+   "delay_ms": 5.0,
+   "seed": 1008,
+   "inversions": 17,
+   "inverted_fraction": 0.07,
+   "max_tilt_deg": 176.0,
+   "diverged": false,
+   "rmse_m": 0.7388665323451535,
+   "traj_sha256": "440f898c4a2af151c7c25e0f5117b534a6373d4ed6350eb89a0d99fdef87f494"
+  },
+  {
+   "delay_ms": 5.0,
+   "seed": 1009,
+   "inversions": 4,
+   "inverted_fraction": 0.0197,
+   "max_tilt_deg": 177.8,
+   "diverged": false,
+   "rmse_m": 0.537284382670056,
+   "traj_sha256": "3a44efdbc1481d2541878f58e247a7b7f87c9dd67514c0f9c4b6818030a5f3c4"
+  },
+  {
+   "delay_ms": 6.0,
+   "seed": 1000,
+   "inversions": 26,
+   "inverted_fraction": 0.1037,
+   "max_tilt_deg": 177.5,
+   "diverged": false,
+   "rmse_m": 0.8913383436344329,
+   "traj_sha256": "c417dbc7730c24f3206c1c497d62e75f3041ca3d6afe55e9de34a7725532a83a"
+  },
+  {
+   "delay_ms": 6.0,
+   "seed": 1001,
+   "inversions": 24,
+   "inverted_fraction": 0.1037,
+   "max_tilt_deg": 176.6,
+   "diverged": false,
+   "rmse_m": 0.8979664320135499,
+   "traj_sha256": "0fbe45079e895b3f7736f3b745c7dba1653366614b312c72a010a89c0953e239"
+  },
+  {
+   "delay_ms": 6.0,
+   "seed": 1002,
+   "inversions": 22,
+   "inverted_fraction": 0.0737,
+   "max_tilt_deg": 178.0,
+   "diverged": false,
+   "rmse_m": 0.9479699199082892,
+   "traj_sha256": "04b7ad70b783fe3b0e5aacb79debe8d218e3af71f56baa2b279bd50f52a7af31"
+  },
+  {
+   "delay_ms": 6.0,
+   "seed": 1003,
+   "inversions": 27,
+   "inverted_fraction": 0.1337,
+   "max_tilt_deg": 178.2,
+   "diverged": false,
+   "rmse_m": 0.8800523345543778,
+   "traj_sha256": "e6c60dfc813c3c5ee51131364c2dd11af8d4a7027293bfe247f9462b7f31588f"
+  },
+  {
+   "delay_ms": 6.0,
+   "seed": 1004,
+   "inversions": 17,
+   "inverted_fraction": 0.0505,
+   "max_tilt_deg": 169.2,
+   "diverged": false,
+   "rmse_m": 0.9083681190371484,
+   "traj_sha256": "bc89bc83b9aba23062d2caea53ecf66a9e26f6f66e2c6aa61382c21174c7fe08"
+  },
+  {
+   "delay_ms": 6.0,
+   "seed": 1005,
+   "inversions": 33,
+   "inverted_fraction": 0.122,
+   "max_tilt_deg": 178.0,
+   "diverged": false,
+   "rmse_m": 0.9458942474297384,
+   "traj_sha256": "9a6be15ba4d72210f255f6d21e9df9c38c66ee2a60591aceb04edb6755ca4857"
+  },
+  {
+   "delay_ms": 6.0,
+   "seed": 1006,
+   "inversions": 35,
+   "inverted_fraction": 0.1194,
+   "max_tilt_deg": 179.3,
+   "diverged": false,
+   "rmse_m": 0.9261257002700777,
+   "traj_sha256": "d8263aaae873357e65c9b4f78a2687c1c67362c19416ab9ae81e84eb72c8999f"
+  },
+  {
+   "delay_ms": 6.0,
+   "seed": 1007,
+   "inversions": 20,
+   "inverted_fraction": 0.0671,
+   "max_tilt_deg": 173.6,
+   "diverged": false,
+   "rmse_m": 0.908517043722558,
+   "traj_sha256": "ae5adb7271ebb2f2091795c603c9787be9c01fe8c02bdbcff0f17efc43469085"
+  },
+  {
+   "delay_ms": 6.0,
+   "seed": 1008,
+   "inversions": 33,
+   "inverted_fraction": 0.1131,
+   "max_tilt_deg": 173.5,
+   "diverged": false,
+   "rmse_m": 0.9486752107346534,
+   "traj_sha256": "33c64f20df163a91a2fb3b4a98b53ad6e2edab1969fcad1a3b40d69c03269187"
+  },
+  {
+   "delay_ms": 6.0,
+   "seed": 1009,
+   "inversions": 21,
+   "inverted_fraction": 0.0669,
+   "max_tilt_deg": 178.8,
+   "diverged": false,
+   "rmse_m": 0.9257258688816906,
+   "traj_sha256": "96a65a9c161cc6a542238a7d8f0b69840684fd41d52a30870e0c436391e5ffd2"
+  },
+  {
+   "delay_ms": 7.0,
+   "seed": 1000,
+   "inversions": 45,
+   "inverted_fraction": 0.172,
+   "max_tilt_deg": 177.0,
+   "diverged": true,
+   "rmse_m": 3.7405133953359657,
+   "traj_sha256": "250866e27f63b1ba5fe39a8d6ed7c744ec36ec5ea030ab8e06af6adb915d8ad2"
+  },
+  {
+   "delay_ms": 7.0,
+   "seed": 1001,
+   "inversions": 53,
+   "inverted_fraction": 0.1925,
+   "max_tilt_deg": 176.5,
+   "diverged": false,
+   "rmse_m": 3.178455631780978,
+   "traj_sha256": "c8e825fb6f0394607611ac59d1aa24426795d98a942ccfe364332c8c3923c9e4"
+  },
+  {
+   "delay_ms": 7.0,
+   "seed": 1002,
+   "inversions": 51,
+   "inverted_fraction": 0.2042,
+   "max_tilt_deg": 177.9,
+   "diverged": true,
+   "rmse_m": 3.7749776522227596,
+   "traj_sha256": "dccacb582f432d3b63ec045d980eab211b6ce9c04488d4a2bafa2a192076829c"
+  },
+  {
+   "delay_ms": 7.0,
+   "seed": 1003,
+   "inversions": 42,
+   "inverted_fraction": 0.1462,
+   "max_tilt_deg": 179.0,
+   "diverged": false,
+   "rmse_m": 3.34101516752896,
+   "traj_sha256": "b8ac37237b900ec3440f1c7ebd040da0fe704a046d858ba2ac205ff90f0959e8"
+  },
+  {
+   "delay_ms": 7.0,
+   "seed": 1004,
+   "inversions": 48,
+   "inverted_fraction": 0.1342,
+   "max_tilt_deg": 174.2,
+   "diverged": false,
+   "rmse_m": 1.0920239827167142,
+   "traj_sha256": "6e34c101c12c4202187296a522c927f622f113ccac7988098bb5ef5a58fab879"
+  },
+  {
+   "delay_ms": 7.0,
+   "seed": 1005,
+   "inversions": 52,
+   "inverted_fraction": 0.2146,
+   "max_tilt_deg": 178.5,
+   "diverged": true,
+   "rmse_m": 5.354872465888142,
+   "traj_sha256": "1f1d2ccaae85d454027fd12de8de7ec288404961f844980de6192d98efb43880"
+  },
+  {
+   "delay_ms": 7.0,
+   "seed": 1006,
+   "inversions": 44,
+   "inverted_fraction": 0.1546,
+   "max_tilt_deg": 177.2,
+   "diverged": false,
+   "rmse_m": 2.216814465060091,
+   "traj_sha256": "449d8e96105d4fdec9b6c46d817d0965b59683f6f09771634f041723cdb75891"
+  },
+  {
+   "delay_ms": 7.0,
+   "seed": 1007,
+   "inversions": 47,
+   "inverted_fraction": 0.2045,
+   "max_tilt_deg": 176.7,
+   "diverged": true,
+   "rmse_m": 5.014314063132815,
+   "traj_sha256": "76a28e631bb3d99d40bd5c5d8f9d044c750795c1e1e8541584dd5ec734aebd04"
+  },
+  {
+   "delay_ms": 7.0,
+   "seed": 1008,
+   "inversions": 60,
+   "inverted_fraction": 0.1711,
+   "max_tilt_deg": 176.1,
+   "diverged": true,
+   "rmse_m": 5.633516305928414,
+   "traj_sha256": "80574fd97abe2a81ea30f99f78b17286e7d9b05a81c820e8759083446b2599af"
+  },
+  {
+   "delay_ms": 7.0,
+   "seed": 1009,
+   "inversions": 50,
+   "inverted_fraction": 0.2058,
+   "max_tilt_deg": 177.0,
+   "diverged": true,
+   "rmse_m": 5.0209021445242215,
+   "traj_sha256": "ebcbf2dcb54d98efe0b0323c537567acd57c51f057bd7164987afc248f10363c"
+  }
+ ]
+}

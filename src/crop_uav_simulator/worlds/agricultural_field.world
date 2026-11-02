@@ -1,0 +1,634 @@
+<?xml version="1.0" ?>
+<!-- GENERADO por tools/generate_field_world.py — editar el generador, no este
+     archivo. Campo de tomate 20x14 m: suelo texturizado (tierra arada) +
+     plantas de tomate (mallas) con 3 zonas de estrés hídrico
+     (clorosis + calvas). ~289 visuales de cultivo. -->
+<sdf version="1.6">
+  <world name="agricultural_field">
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://ground_plane</uri></include>
+    <include><uri>model://field_ground</uri></include>
+
+    <physics type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+
+    <scene>
+      <ambient>0.55 0.55 0.5 1</ambient>
+      <background>0.55 0.7 0.9 1</background>
+      <shadows>true</shadows>
+    </scene>
+
+    <!-- cámara inicial de la GUI: encuadra el campo y el dron -->
+    <gui>
+      <camera name="user_camera">
+        <pose>10 -26 11 0 0.40 1.5708</pose>
+      </camera>
+    </gui>
+
+    <!-- cultivo: dosel continuo por hileras -->
+    <model name="tomato_crop">
+      <static>true</static>
+      <link name="rows">
+        <visual name="p0"><pose>0.65 -0.75 0 0 0 5.74</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.09 1.09 1.09</scale></mesh></geometry></visual>
+        <visual name="p1"><pose>1.53 -0.83 0 0 0 3.01</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.02 1.02 1.02</scale></mesh></geometry></visual>
+        <visual name="p2"><pose>2.30 -0.87 0 0 0 5.46</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.06 1.06 1.06</scale></mesh></geometry></visual>
+        <visual name="p3"><pose>3.18 -0.73 0 0 0 4.83</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.05 1.05 1.05</scale></mesh></geometry></visual>
+        <visual name="p4"><pose>3.84 -0.74 0 0 0 2.32</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.19 1.19 1.19</scale></mesh></geometry></visual>
+        <visual name="p5"><pose>4.72 -0.84 0 0 0 4.77</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.05 1.05 1.05</scale></mesh></geometry></visual>
+        <visual name="p6"><pose>5.47 -0.88 0 0 0 5.50</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.09 1.09 1.09</scale></mesh></geometry></visual>
+        <visual name="p7"><pose>6.28 -0.79 0 0 0 5.12</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.00 1.00 1.00</scale></mesh></geometry></visual>
+        <visual name="p8"><pose>7.17 -0.88 0 0 0 1.34</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.11 1.11 1.11</scale></mesh></geometry></visual>
+        <visual name="p9"><pose>7.95 -0.80 0 0 0 4.80</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.00 1.00 1.00</scale></mesh></geometry></visual>
+        <visual name="p10"><pose>8.61 -0.83 0 0 0 4.56</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.22 1.22 1.22</scale></mesh></geometry></visual>
+        <visual name="p11"><pose>9.46 -0.81 0 0 0 3.74</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.22 1.22 1.22</scale></mesh></geometry></visual>
+        <visual name="p12"><pose>10.29 -0.74 0 0 0 1.91</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>0.98 0.98 0.98</scale></mesh></geometry></visual>
+        <visual name="p13"><pose>11.21 -0.75 0 0 0 3.24</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.03 1.03 1.03</scale></mesh></geometry></visual>
+        <visual name="p14"><pose>11.87 -0.83 0 0 0 2.49</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.18 1.18 1.18</scale></mesh></geometry></visual>
+        <visual name="p15"><pose>12.76 -0.83 0 0 0 2.45</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.19 1.19 1.19</scale></mesh></geometry></visual>
+        <visual name="p16"><pose>13.52 -0.86 0 0 0 4.77</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.18 1.18 1.18</scale></mesh></geometry></visual>
+        <visual name="p17"><pose>14.23 -0.89 0 0 0 1.00</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.24 1.24 1.24</scale></mesh></geometry></visual>
+        <visual name="p18"><pose>15.14 -0.74 0 0 0 0.40</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.01 1.01 1.01</scale></mesh></geometry></visual>
+        <visual name="p19"><pose>15.91 -0.83 0 0 0 1.72</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.21 1.21 1.21</scale></mesh></geometry></visual>
+        <visual name="p20"><pose>16.60 -0.77 0 0 0 0.90</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.19 1.19 1.19</scale></mesh></geometry></visual>
+        <visual name="p21"><pose>17.48 -0.76 0 0 0 3.07</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.02 1.02 1.02</scale></mesh></geometry></visual>
+        <visual name="p22"><pose>18.29 -0.83 0 0 0 5.07</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.14 1.14 1.14</scale></mesh></geometry></visual>
+        <visual name="p23"><pose>19.10 -0.79 0 0 0 4.53</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.12 1.12 1.12</scale></mesh></geometry></visual>
+        <visual name="p24"><pose>0.59 -1.80 0 0 0 6.19</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.20 1.20 1.20</scale></mesh></geometry></visual>
+        <visual name="p25"><pose>1.57 -1.78 0 0 0 5.58</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.12 1.12 1.12</scale></mesh></geometry></visual>
+        <visual name="p26"><pose>2.31 -1.81 0 0 0 5.04</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.22 1.22 1.22</scale></mesh></geometry></visual>
+        <visual name="p27"><pose>3.20 -1.90 0 0 0 1.02</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.03 1.03 1.03</scale></mesh></geometry></visual>
+        <visual name="p28"><pose>7.01 -1.91 0 0 0 1.37</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.11 1.11 1.11</scale></mesh></geometry></visual>
+        <visual name="p29"><pose>7.89 -1.85 0 0 0 2.78</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.04 1.04 1.04</scale></mesh></geometry></visual>
+        <visual name="p30"><pose>8.80 -1.76 0 0 0 3.94</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.07 1.07 1.07</scale></mesh></geometry></visual>
+        <visual name="p31"><pose>9.44 -1.77 0 0 0 5.74</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.13 1.13 1.13</scale></mesh></geometry></visual>
+        <visual name="p32"><pose>10.37 -1.93 0 0 0 5.42</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>0.92 0.92 0.92</scale></mesh></geometry></visual>
+        <visual name="p33"><pose>11.21 -1.79 0 0 0 2.42</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.18 1.18 1.18</scale></mesh></geometry></visual>
+        <visual name="p34"><pose>11.97 -1.79 0 0 0 0.36</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.21 1.21 1.21</scale></mesh></geometry></visual>
+        <visual name="p35"><pose>12.79 -1.77 0 0 0 2.83</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.15 1.15 1.15</scale></mesh></geometry></visual>
+        <visual name="p36"><pose>13.53 -1.92 0 0 0 0.99</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>0.95 0.95 0.95</scale></mesh></geometry></visual>
+        <visual name="p37"><pose>14.40 -1.79 0 0 0 0.82</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.25 1.25 1.25</scale></mesh></geometry></visual>
+        <visual name="p38"><pose>15.04 -1.84 0 0 0 0.95</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>0.90 0.90 0.90</scale></mesh></geometry></visual>
+        <visual name="p39"><pose>15.98 -1.78 0 0 0 5.17</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_0.obj</uri><scale>1.04 1.04 1.04</scale></mesh></geometry></visual>
+        <visual name="p40"><pose>16.73 -1.84 0 0 0 5.59</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_1.obj</uri><scale>0.97 0.97 0.97</scale></mesh></geometry></visual>
+        <visual name="p41"><pose>17.56 -1.84 0 0 0 3.18</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_0.obj</uri><scale>1.15 1.15 1.15</scale></mesh></geometry></visual>
+        <visual name="p42"><pose>18.28 -1.77 0 0 0 0.57</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_1.obj</uri><scale>1.00 1.00 1.00</scale></mesh></geometry></visual>
+        <visual name="p43"><pose>19.11 -1.84 0 0 0 0.99</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.01 1.01 1.01</scale></mesh></geometry></visual>
+        <visual name="p44"><pose>0.68 -2.89 0 0 0 6.27</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.15 1.15 1.15</scale></mesh></geometry></visual>
+        <visual name="p45"><pose>1.47 -2.86 0 0 0 0.66</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.14 1.14 1.14</scale></mesh></geometry></visual>
+        <visual name="p46"><pose>2.36 -2.84 0 0 0 0.77</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>0.90 0.90 0.90</scale></mesh></geometry></visual>
+        <visual name="p47"><pose>3.07 -2.86 0 0 0 1.49</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_1.obj</uri><scale>1.00 1.00 1.00</scale></mesh></geometry></visual>
+        <visual name="p48"><pose>3.99 -2.83 0 0 0 4.52</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_0.obj</uri><scale>0.91 0.91 0.91</scale></mesh></geometry></visual>
+        <visual name="p49"><pose>4.67 -2.89 0 0 0 1.87</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_1.obj</uri><scale>0.96 0.96 0.96</scale></mesh></geometry></visual>
+        <visual name="p50"><pose>6.25 -2.95 0 0 0 2.95</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_1.obj</uri><scale>1.02 1.02 1.02</scale></mesh></geometry></visual>
+        <visual name="p51"><pose>7.00 -2.97 0 0 0 0.59</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_0.obj</uri><scale>0.89 0.89 0.89</scale></mesh></geometry></visual>
+        <visual name="p52"><pose>7.88 -2.83 0 0 0 3.72</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>0.94 0.94 0.94</scale></mesh></geometry></visual>
+        <visual name="p53"><pose>8.59 -2.80 0 0 0 2.73</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.02 1.02 1.02</scale></mesh></geometry></visual>
+        <visual name="p54"><pose>9.58 -2.81 0 0 0 0.87</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.17 1.17 1.17</scale></mesh></geometry></visual>
+        <visual name="p55"><pose>10.38 -2.92 0 0 0 2.08</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.12 1.12 1.12</scale></mesh></geometry></visual>
+        <visual name="p56"><pose>11.15 -2.88 0 0 0 2.00</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.13 1.13 1.13</scale></mesh></geometry></visual>
+        <visual name="p57"><pose>11.93 -3.00 0 0 0 2.08</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.01 1.01 1.01</scale></mesh></geometry></visual>
+        <visual name="p58"><pose>12.69 -2.89 0 0 0 1.29</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.18 1.18 1.18</scale></mesh></geometry></visual>
+        <visual name="p59"><pose>13.58 -2.88 0 0 0 0.99</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.22 1.22 1.22</scale></mesh></geometry></visual>
+        <visual name="p60"><pose>14.31 -2.93 0 0 0 3.14</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.10 1.10 1.10</scale></mesh></geometry></visual>
+        <visual name="p61"><pose>15.03 -2.81 0 0 0 6.27</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.19 1.19 1.19</scale></mesh></geometry></visual>
+        <visual name="p62"><pose>15.83 -2.81 0 0 0 3.94</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_0.obj</uri><scale>1.14 1.14 1.14</scale></mesh></geometry></visual>
+        <visual name="p63"><pose>16.61 -2.90 0 0 0 2.62</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_1.obj</uri><scale>1.03 1.03 1.03</scale></mesh></geometry></visual>
+        <visual name="p64"><pose>17.60 -2.93 0 0 0 2.91</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_0.obj</uri><scale>1.06 1.06 1.06</scale></mesh></geometry></visual>
+        <visual name="p65"><pose>18.36 -2.95 0 0 0 3.58</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_0.obj</uri><scale>1.09 1.09 1.09</scale></mesh></geometry></visual>
+        <visual name="p66"><pose>19.04 -2.82 0 0 0 6.23</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.11 1.11 1.11</scale></mesh></geometry></visual>
+        <visual name="p67"><pose>0.61 -3.89 0 0 0 1.81</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>0.98 0.98 0.98</scale></mesh></geometry></visual>
+        <visual name="p68"><pose>1.52 -3.88 0 0 0 1.17</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.18 1.18 1.18</scale></mesh></geometry></visual>
+        <visual name="p69"><pose>2.29 -3.97 0 0 0 4.92</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>0.95 0.95 0.95</scale></mesh></geometry></visual>
+        <visual name="p70"><pose>3.16 -3.88 0 0 0 5.70</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_0.obj</uri><scale>0.88 0.88 0.88</scale></mesh></geometry></visual>
+        <visual name="p71"><pose>5.60 -4.04 0 0 0 4.93</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_0.obj</uri><scale>0.93 0.93 0.93</scale></mesh></geometry></visual>
+        <visual name="p72"><pose>6.30 -4.03 0 0 0 2.17</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_1.obj</uri><scale>1.00 1.00 1.00</scale></mesh></geometry></visual>
+        <visual name="p73"><pose>7.10 -3.85 0 0 0 5.27</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_1.obj</uri><scale>1.02 1.02 1.02</scale></mesh></geometry></visual>
+        <visual name="p74"><pose>7.81 -4.03 0 0 0 5.90</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.08 1.08 1.08</scale></mesh></geometry></visual>
+        <visual name="p75"><pose>8.68 -3.87 0 0 0 2.01</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.00 1.00 1.00</scale></mesh></geometry></visual>
+        <visual name="p76"><pose>9.53 -3.96 0 0 0 2.37</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.16 1.16 1.16</scale></mesh></geometry></visual>
+        <visual name="p77"><pose>10.25 -3.93 0 0 0 0.44</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_0.obj</uri><scale>1.16 1.16 1.16</scale></mesh></geometry></visual>
+        <visual name="p78"><pose>11.04 -3.88 0 0 0 6.11</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.14 1.14 1.14</scale></mesh></geometry></visual>
+        <visual name="p79"><pose>11.91 -4.00 0 0 0 1.92</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.23 1.23 1.23</scale></mesh></geometry></visual>
+        <visual name="p80"><pose>12.79 -3.85 0 0 0 4.59</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.03 1.03 1.03</scale></mesh></geometry></visual>
+        <visual name="p81"><pose>13.51 -3.94 0 0 0 1.03</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.16 1.16 1.16</scale></mesh></geometry></visual>
+        <visual name="p82"><pose>14.32 -3.87 0 0 0 0.62</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>0.94 0.94 0.94</scale></mesh></geometry></visual>
+        <visual name="p83"><pose>15.11 -3.86 0 0 0 0.00</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.15 1.15 1.15</scale></mesh></geometry></visual>
+        <visual name="p84"><pose>15.79 -4.02 0 0 0 2.77</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_1.obj</uri><scale>1.15 1.15 1.15</scale></mesh></geometry></visual>
+        <visual name="p85"><pose>16.68 -3.98 0 0 0 3.68</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_0.obj</uri><scale>1.03 1.03 1.03</scale></mesh></geometry></visual>
+        <visual name="p86"><pose>17.49 -3.99 0 0 0 2.04</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_0.obj</uri><scale>1.18 1.18 1.18</scale></mesh></geometry></visual>
+        <visual name="p87"><pose>18.41 -3.96 0 0 0 1.30</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_1.obj</uri><scale>1.16 1.16 1.16</scale></mesh></geometry></visual>
+        <visual name="p88"><pose>19.15 -4.04 0 0 0 1.98</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.21 1.21 1.21</scale></mesh></geometry></visual>
+        <visual name="p89"><pose>0.58 -4.97 0 0 0 4.39</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>0.97 0.97 0.97</scale></mesh></geometry></visual>
+        <visual name="p90"><pose>1.53 -5.06 0 0 0 5.53</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.13 1.13 1.13</scale></mesh></geometry></visual>
+        <visual name="p91"><pose>2.25 -4.94 0 0 0 6.04</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.20 1.20 1.20</scale></mesh></geometry></visual>
+        <visual name="p92"><pose>3.15 -5.07 0 0 0 4.37</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.05 1.05 1.05</scale></mesh></geometry></visual>
+        <visual name="p93"><pose>3.82 -4.93 0 0 0 0.76</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_1.obj</uri><scale>0.89 0.89 0.89</scale></mesh></geometry></visual>
+        <visual name="p94"><pose>4.64 -4.97 0 0 0 4.97</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_0.obj</uri><scale>0.97 0.97 0.97</scale></mesh></geometry></visual>
+        <visual name="p95"><pose>5.43 -5.04 0 0 0 5.82</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_1.obj</uri><scale>0.88 0.88 0.88</scale></mesh></geometry></visual>
+        <visual name="p96"><pose>6.34 -5.01 0 0 0 0.48</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_0.obj</uri><scale>0.96 0.96 0.96</scale></mesh></geometry></visual>
+        <visual name="p97"><pose>6.99 -4.98 0 0 0 1.79</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.05 1.05 1.05</scale></mesh></geometry></visual>
+        <visual name="p98"><pose>7.92 -5.07 0 0 0 6.21</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>0.99 0.99 0.99</scale></mesh></geometry></visual>
+        <visual name="p99"><pose>8.65 -4.99 0 0 0 1.17</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.25 1.25 1.25</scale></mesh></geometry></visual>
+        <visual name="p100"><pose>9.39 -5.01 0 0 0 4.72</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_1.obj</uri><scale>0.95 0.95 0.95</scale></mesh></geometry></visual>
+        <visual name="p101"><pose>10.39 -5.09 0 0 0 0.40</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_1.obj</uri><scale>1.03 1.03 1.03</scale></mesh></geometry></visual>
+        <visual name="p102"><pose>11.10 -5.09 0 0 0 1.83</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_0.obj</uri><scale>1.10 1.10 1.10</scale></mesh></geometry></visual>
+        <visual name="p103"><pose>11.97 -5.08 0 0 0 2.74</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.05 1.05 1.05</scale></mesh></geometry></visual>
+        <visual name="p104"><pose>12.77 -4.94 0 0 0 4.97</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>0.99 0.99 0.99</scale></mesh></geometry></visual>
+        <visual name="p105"><pose>14.23 -4.91 0 0 0 0.33</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_0.obj</uri><scale>0.92 0.92 0.92</scale></mesh></geometry></visual>
+        <visual name="p106"><pose>15.13 -4.98 0 0 0 5.07</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_1.obj</uri><scale>1.02 1.02 1.02</scale></mesh></geometry></visual>
+        <visual name="p107"><pose>15.79 -5.08 0 0 0 1.12</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_0.obj</uri><scale>0.97 0.97 0.97</scale></mesh></geometry></visual>
+        <visual name="p108"><pose>16.59 -5.01 0 0 0 4.37</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.16 1.16 1.16</scale></mesh></geometry></visual>
+        <visual name="p109"><pose>17.57 -4.95 0 0 0 3.13</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.19 1.19 1.19</scale></mesh></geometry></visual>
+        <visual name="p110"><pose>18.22 -5.05 0 0 0 1.00</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.13 1.13 1.13</scale></mesh></geometry></visual>
+        <visual name="p111"><pose>19.12 -5.01 0 0 0 1.98</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.03 1.03 1.03</scale></mesh></geometry></visual>
+        <visual name="p112"><pose>0.63 -5.96 0 0 0 0.26</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.16 1.16 1.16</scale></mesh></geometry></visual>
+        <visual name="p113"><pose>1.52 -6.12 0 0 0 4.68</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.16 1.16 1.16</scale></mesh></geometry></visual>
+        <visual name="p114"><pose>2.19 -6.10 0 0 0 5.59</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>0.93 0.93 0.93</scale></mesh></geometry></visual>
+        <visual name="p115"><pose>3.11 -6.06 0 0 0 5.88</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.14 1.14 1.14</scale></mesh></geometry></visual>
+        <visual name="p116"><pose>3.95 -5.95 0 0 0 3.85</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>0.99 0.99 0.99</scale></mesh></geometry></visual>
+        <visual name="p117"><pose>4.71 -6.10 0 0 0 2.90</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.03 1.03 1.03</scale></mesh></geometry></visual>
+        <visual name="p118"><pose>5.46 -5.95 0 0 0 3.84</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>0.96 0.96 0.96</scale></mesh></geometry></visual>
+        <visual name="p119"><pose>6.32 -5.95 0 0 0 4.63</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.14 1.14 1.14</scale></mesh></geometry></visual>
+        <visual name="p120"><pose>7.19 -6.03 0 0 0 5.57</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.20 1.20 1.20</scale></mesh></geometry></visual>
+        <visual name="p121"><pose>8.00 -6.11 0 0 0 2.38</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>0.98 0.98 0.98</scale></mesh></geometry></visual>
+        <visual name="p122"><pose>8.66 -6.11 0 0 0 3.45</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.07 1.07 1.07</scale></mesh></geometry></visual>
+        <visual name="p123"><pose>9.48 -6.03 0 0 0 4.77</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.06 1.06 1.06</scale></mesh></geometry></visual>
+        <visual name="p124"><pose>10.42 -6.01 0 0 0 5.42</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_0.obj</uri><scale>1.09 1.09 1.09</scale></mesh></geometry></visual>
+        <visual name="p125"><pose>11.08 -6.14 0 0 0 1.74</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.12 1.12 1.12</scale></mesh></geometry></visual>
+        <visual name="p126"><pose>11.90 -6.00 0 0 0 3.22</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_0.obj</uri><scale>0.90 0.90 0.90</scale></mesh></geometry></visual>
+        <visual name="p127"><pose>12.67 -6.12 0 0 0 5.89</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_0.obj</uri><scale>0.99 0.99 0.99</scale></mesh></geometry></visual>
+        <visual name="p128"><pose>13.60 -6.15 0 0 0 2.02</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_0.obj</uri><scale>1.02 1.02 1.02</scale></mesh></geometry></visual>
+        <visual name="p129"><pose>14.27 -6.10 0 0 0 5.52</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_1.obj</uri><scale>0.93 0.93 0.93</scale></mesh></geometry></visual>
+        <visual name="p130"><pose>15.04 -6.14 0 0 0 0.95</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_0.obj</uri><scale>0.89 0.89 0.89</scale></mesh></geometry></visual>
+        <visual name="p131"><pose>15.88 -6.05 0 0 0 4.36</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_1.obj</uri><scale>0.91 0.91 0.91</scale></mesh></geometry></visual>
+        <visual name="p132"><pose>16.69 -6.07 0 0 0 5.53</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_1.obj</uri><scale>0.93 0.93 0.93</scale></mesh></geometry></visual>
+        <visual name="p133"><pose>17.47 -5.98 0 0 0 1.42</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.03 1.03 1.03</scale></mesh></geometry></visual>
+        <visual name="p134"><pose>18.33 -6.12 0 0 0 5.33</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.12 1.12 1.12</scale></mesh></geometry></visual>
+        <visual name="p135"><pose>19.12 -5.99 0 0 0 6.13</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.13 1.13 1.13</scale></mesh></geometry></visual>
+        <visual name="p136"><pose>0.60 -7.03 0 0 0 3.51</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.13 1.13 1.13</scale></mesh></geometry></visual>
+        <visual name="p137"><pose>1.61 -7.03 0 0 0 1.47</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>0.99 0.99 0.99</scale></mesh></geometry></visual>
+        <visual name="p138"><pose>2.37 -7.18 0 0 0 3.10</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.03 1.03 1.03</scale></mesh></geometry></visual>
+        <visual name="p139"><pose>3.06 -7.10 0 0 0 1.76</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.22 1.22 1.22</scale></mesh></geometry></visual>
+        <visual name="p140"><pose>3.83 -7.05 0 0 0 2.20</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>0.98 0.98 0.98</scale></mesh></geometry></visual>
+        <visual name="p141"><pose>4.60 -7.13 0 0 0 2.65</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.07 1.07 1.07</scale></mesh></geometry></visual>
+        <visual name="p142"><pose>5.44 -7.03 0 0 0 1.94</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.22 1.22 1.22</scale></mesh></geometry></visual>
+        <visual name="p143"><pose>6.21 -7.02 0 0 0 5.73</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>0.92 0.92 0.92</scale></mesh></geometry></visual>
+        <visual name="p144"><pose>7.10 -7.08 0 0 0 2.95</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.21 1.21 1.21</scale></mesh></geometry></visual>
+        <visual name="p145"><pose>7.80 -7.19 0 0 0 2.03</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.10 1.10 1.10</scale></mesh></geometry></visual>
+        <visual name="p146"><pose>8.64 -7.07 0 0 0 1.17</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.03 1.03 1.03</scale></mesh></geometry></visual>
+        <visual name="p147"><pose>9.46 -7.02 0 0 0 0.19</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.23 1.23 1.23</scale></mesh></geometry></visual>
+        <visual name="p148"><pose>10.37 -7.07 0 0 0 3.90</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.11 1.11 1.11</scale></mesh></geometry></visual>
+        <visual name="p149"><pose>11.00 -7.19 0 0 0 2.92</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.03 1.03 1.03</scale></mesh></geometry></visual>
+        <visual name="p150"><pose>12.00 -7.19 0 0 0 0.85</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_1.obj</uri><scale>0.95 0.95 0.95</scale></mesh></geometry></visual>
+        <visual name="p151"><pose>13.44 -7.16 0 0 0 3.27</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_1.obj</uri><scale>0.85 0.85 0.85</scale></mesh></geometry></visual>
+        <visual name="p152"><pose>15.18 -7.02 0 0 0 4.34</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_1.obj</uri><scale>0.92 0.92 0.92</scale></mesh></geometry></visual>
+        <visual name="p153"><pose>15.99 -7.14 0 0 0 4.50</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_0.obj</uri><scale>1.04 1.04 1.04</scale></mesh></geometry></visual>
+        <visual name="p154"><pose>16.78 -7.17 0 0 0 3.91</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_1.obj</uri><scale>0.92 0.92 0.92</scale></mesh></geometry></visual>
+        <visual name="p155"><pose>18.24 -7.14 0 0 0 1.12</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.16 1.16 1.16</scale></mesh></geometry></visual>
+        <visual name="p156"><pose>19.19 -7.00 0 0 0 5.14</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.01 1.01 1.01</scale></mesh></geometry></visual>
+        <visual name="p157"><pose>0.78 -8.15 0 0 0 4.27</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>0.96 0.96 0.96</scale></mesh></geometry></visual>
+        <visual name="p158"><pose>1.59 -8.08 0 0 0 0.34</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.04 1.04 1.04</scale></mesh></geometry></visual>
+        <visual name="p159"><pose>2.36 -8.11 0 0 0 1.59</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>0.99 0.99 0.99</scale></mesh></geometry></visual>
+        <visual name="p160"><pose>3.15 -8.18 0 0 0 2.10</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_0.obj</uri><scale>1.16 1.16 1.16</scale></mesh></geometry></visual>
+        <visual name="p161"><pose>3.98 -8.14 0 0 0 2.64</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_0.obj</uri><scale>1.11 1.11 1.11</scale></mesh></geometry></visual>
+        <visual name="p162"><pose>4.78 -8.09 0 0 0 0.79</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.12 1.12 1.12</scale></mesh></geometry></visual>
+        <visual name="p163"><pose>5.45 -8.12 0 0 0 6.12</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.10 1.10 1.10</scale></mesh></geometry></visual>
+        <visual name="p164"><pose>6.41 -8.06 0 0 0 0.84</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>0.99 0.99 0.99</scale></mesh></geometry></visual>
+        <visual name="p165"><pose>7.04 -8.12 0 0 0 2.43</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.25 1.25 1.25</scale></mesh></geometry></visual>
+        <visual name="p166"><pose>7.79 -8.11 0 0 0 0.74</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>0.97 0.97 0.97</scale></mesh></geometry></visual>
+        <visual name="p167"><pose>8.67 -8.14 0 0 0 5.04</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.02 1.02 1.02</scale></mesh></geometry></visual>
+        <visual name="p168"><pose>9.39 -8.14 0 0 0 3.04</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>0.92 0.92 0.92</scale></mesh></geometry></visual>
+        <visual name="p169"><pose>10.29 -8.08 0 0 0 4.08</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.04 1.04 1.04</scale></mesh></geometry></visual>
+        <visual name="p170"><pose>11.13 -8.10 0 0 0 6.16</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.14 1.14 1.14</scale></mesh></geometry></visual>
+        <visual name="p171"><pose>11.83 -8.19 0 0 0 5.45</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_0.obj</uri><scale>0.96 0.96 0.96</scale></mesh></geometry></visual>
+        <visual name="p172"><pose>15.96 -8.12 0 0 0 0.03</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_0.obj</uri><scale>1.05 1.05 1.05</scale></mesh></geometry></visual>
+        <visual name="p173"><pose>16.63 -8.08 0 0 0 3.04</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_1.obj</uri><scale>0.96 0.96 0.96</scale></mesh></geometry></visual>
+        <visual name="p174"><pose>17.43 -8.13 0 0 0 5.20</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.00 1.00 1.00</scale></mesh></geometry></visual>
+        <visual name="p175"><pose>18.41 -8.08 0 0 0 6.25</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.10 1.10 1.10</scale></mesh></geometry></visual>
+        <visual name="p176"><pose>19.21 -8.24 0 0 0 5.39</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.09 1.09 1.09</scale></mesh></geometry></visual>
+        <visual name="p177"><pose>0.74 -9.25 0 0 0 0.15</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.01 1.01 1.01</scale></mesh></geometry></visual>
+        <visual name="p178"><pose>1.50 -9.30 0 0 0 1.32</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>0.90 0.90 0.90</scale></mesh></geometry></visual>
+        <visual name="p179"><pose>2.31 -9.14 0 0 0 4.98</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_1.obj</uri><scale>1.05 1.05 1.05</scale></mesh></geometry></visual>
+        <visual name="p180"><pose>3.17 -9.13 0 0 0 4.82</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_0.obj</uri><scale>1.18 1.18 1.18</scale></mesh></geometry></visual>
+        <visual name="p181"><pose>3.90 -9.13 0 0 0 2.57</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_0.obj</uri><scale>0.95 0.95 0.95</scale></mesh></geometry></visual>
+        <visual name="p182"><pose>4.61 -9.24 0 0 0 4.55</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_1.obj</uri><scale>1.15 1.15 1.15</scale></mesh></geometry></visual>
+        <visual name="p183"><pose>5.47 -9.17 0 0 0 2.22</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>0.92 0.92 0.92</scale></mesh></geometry></visual>
+        <visual name="p184"><pose>6.34 -9.18 0 0 0 1.66</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.16 1.16 1.16</scale></mesh></geometry></visual>
+        <visual name="p185"><pose>7.03 -9.15 0 0 0 3.43</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>0.97 0.97 0.97</scale></mesh></geometry></visual>
+        <visual name="p186"><pose>7.86 -9.27 0 0 0 2.34</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.05 1.05 1.05</scale></mesh></geometry></visual>
+        <visual name="p187"><pose>8.58 -9.20 0 0 0 2.53</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.23 1.23 1.23</scale></mesh></geometry></visual>
+        <visual name="p188"><pose>9.58 -9.15 0 0 0 0.13</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.01 1.01 1.01</scale></mesh></geometry></visual>
+        <visual name="p189"><pose>10.36 -9.28 0 0 0 6.20</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.07 1.07 1.07</scale></mesh></geometry></visual>
+        <visual name="p190"><pose>11.21 -9.20 0 0 0 4.90</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.18 1.18 1.18</scale></mesh></geometry></visual>
+        <visual name="p191"><pose>11.80 -9.22 0 0 0 5.79</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.17 1.17 1.17</scale></mesh></geometry></visual>
+        <visual name="p192"><pose>12.71 -9.30 0 0 0 4.59</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.03 1.03 1.03</scale></mesh></geometry></visual>
+        <visual name="p193"><pose>13.53 -9.26 0 0 0 3.87</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.20 1.20 1.20</scale></mesh></geometry></visual>
+        <visual name="p194"><pose>15.18 -9.16 0 0 0 2.85</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_1.obj</uri><scale>1.02 1.02 1.02</scale></mesh></geometry></visual>
+        <visual name="p195"><pose>15.90 -9.22 0 0 0 3.40</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.08 1.08 1.08</scale></mesh></geometry></visual>
+        <visual name="p196"><pose>16.59 -9.17 0 0 0 2.81</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>0.92 0.92 0.92</scale></mesh></geometry></visual>
+        <visual name="p197"><pose>17.39 -9.24 0 0 0 3.37</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.25 1.25 1.25</scale></mesh></geometry></visual>
+        <visual name="p198"><pose>18.36 -9.24 0 0 0 4.63</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.04 1.04 1.04</scale></mesh></geometry></visual>
+        <visual name="p199"><pose>19.19 -9.27 0 0 0 6.22</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>0.94 0.94 0.94</scale></mesh></geometry></visual>
+        <visual name="p200"><pose>0.62 -10.17 0 0 0 4.96</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.19 1.19 1.19</scale></mesh></geometry></visual>
+        <visual name="p201"><pose>1.57 -10.25 0 0 0 6.24</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>0.96 0.96 0.96</scale></mesh></geometry></visual>
+        <visual name="p202"><pose>2.19 -10.28 0 0 0 3.25</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_1.obj</uri><scale>1.06 1.06 1.06</scale></mesh></geometry></visual>
+        <visual name="p203"><pose>3.11 -10.18 0 0 0 1.23</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_1.obj</uri><scale>1.19 1.19 1.19</scale></mesh></geometry></visual>
+        <visual name="p204"><pose>3.84 -10.33 0 0 0 2.77</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_1.obj</uri><scale>1.17 1.17 1.17</scale></mesh></geometry></visual>
+        <visual name="p205"><pose>4.60 -10.25 0 0 0 0.35</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_0.obj</uri><scale>1.15 1.15 1.15</scale></mesh></geometry></visual>
+        <visual name="p206"><pose>5.42 -10.28 0 0 0 0.63</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.23 1.23 1.23</scale></mesh></geometry></visual>
+        <visual name="p207"><pose>6.41 -10.31 0 0 0 1.81</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_1.obj</uri><scale>0.86 0.86 0.86</scale></mesh></geometry></visual>
+        <visual name="p208"><pose>7.94 -10.24 0 0 0 1.99</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_0.obj</uri><scale>0.96 0.96 0.96</scale></mesh></geometry></visual>
+        <visual name="p209"><pose>8.82 -10.27 0 0 0 5.13</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_1.obj</uri><scale>0.98 0.98 0.98</scale></mesh></geometry></visual>
+        <visual name="p210"><pose>10.32 -10.34 0 0 0 1.75</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.23 1.23 1.23</scale></mesh></geometry></visual>
+        <visual name="p211"><pose>11.13 -10.28 0 0 0 1.23</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.14 1.14 1.14</scale></mesh></geometry></visual>
+        <visual name="p212"><pose>11.96 -10.28 0 0 0 1.95</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>0.97 0.97 0.97</scale></mesh></geometry></visual>
+        <visual name="p213"><pose>12.60 -10.30 0 0 0 2.35</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.04 1.04 1.04</scale></mesh></geometry></visual>
+        <visual name="p214"><pose>13.49 -10.25 0 0 0 5.92</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.08 1.08 1.08</scale></mesh></geometry></visual>
+        <visual name="p215"><pose>14.28 -10.25 0 0 0 0.74</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.21 1.21 1.21</scale></mesh></geometry></visual>
+        <visual name="p216"><pose>15.05 -10.18 0 0 0 4.25</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>0.98 0.98 0.98</scale></mesh></geometry></visual>
+        <visual name="p217"><pose>15.89 -10.31 0 0 0 2.60</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.06 1.06 1.06</scale></mesh></geometry></visual>
+        <visual name="p218"><pose>16.60 -10.27 0 0 0 1.77</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.13 1.13 1.13</scale></mesh></geometry></visual>
+        <visual name="p219"><pose>17.44 -10.22 0 0 0 0.08</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>0.99 0.99 0.99</scale></mesh></geometry></visual>
+        <visual name="p220"><pose>18.28 -10.32 0 0 0 5.63</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.04 1.04 1.04</scale></mesh></geometry></visual>
+        <visual name="p221"><pose>19.05 -10.33 0 0 0 5.53</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>0.94 0.94 0.94</scale></mesh></geometry></visual>
+        <visual name="p222"><pose>0.74 -11.31 0 0 0 1.31</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>0.91 0.91 0.91</scale></mesh></geometry></visual>
+        <visual name="p223"><pose>1.39 -11.28 0 0 0 4.38</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.13 1.13 1.13</scale></mesh></geometry></visual>
+        <visual name="p224"><pose>2.22 -11.39 0 0 0 1.07</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.01 1.01 1.01</scale></mesh></geometry></visual>
+        <visual name="p225"><pose>3.14 -11.28 0 0 0 6.10</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.25 1.25 1.25</scale></mesh></geometry></visual>
+        <visual name="p226"><pose>3.87 -11.23 0 0 0 4.08</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/infested_0.obj</uri><scale>1.20 1.20 1.20</scale></mesh></geometry></visual>
+        <visual name="p227"><pose>4.60 -11.31 0 0 0 2.52</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.23 1.23 1.23</scale></mesh></geometry></visual>
+        <visual name="p228"><pose>5.50 -11.28 0 0 0 3.12</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_1.obj</uri><scale>0.87 0.87 0.87</scale></mesh></geometry></visual>
+        <visual name="p229"><pose>6.37 -11.40 0 0 0 6.02</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_1.obj</uri><scale>0.98 0.98 0.98</scale></mesh></geometry></visual>
+        <visual name="p230"><pose>7.21 -11.31 0 0 0 5.55</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_0.obj</uri><scale>0.85 0.85 0.85</scale></mesh></geometry></visual>
+        <visual name="p231"><pose>10.32 -11.37 0 0 0 0.56</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_1.obj</uri><scale>0.92 0.92 0.92</scale></mesh></geometry></visual>
+        <visual name="p232"><pose>11.04 -11.28 0 0 0 2.93</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.11 1.11 1.11</scale></mesh></geometry></visual>
+        <visual name="p233"><pose>11.82 -11.38 0 0 0 0.86</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.18 1.18 1.18</scale></mesh></geometry></visual>
+        <visual name="p234"><pose>12.70 -11.37 0 0 0 3.55</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.04 1.04 1.04</scale></mesh></geometry></visual>
+        <visual name="p235"><pose>13.53 -11.23 0 0 0 6.06</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.19 1.19 1.19</scale></mesh></geometry></visual>
+        <visual name="p236"><pose>14.23 -11.24 0 0 0 0.69</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.15 1.15 1.15</scale></mesh></geometry></visual>
+        <visual name="p237"><pose>15.02 -11.29 0 0 0 0.18</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.07 1.07 1.07</scale></mesh></geometry></visual>
+        <visual name="p238"><pose>16.00 -11.29 0 0 0 4.79</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.04 1.04 1.04</scale></mesh></geometry></visual>
+        <visual name="p239"><pose>16.65 -11.36 0 0 0 3.37</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.22 1.22 1.22</scale></mesh></geometry></visual>
+        <visual name="p240"><pose>17.46 -11.30 0 0 0 4.11</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.23 1.23 1.23</scale></mesh></geometry></visual>
+        <visual name="p241"><pose>18.32 -11.30 0 0 0 5.68</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.12 1.12 1.12</scale></mesh></geometry></visual>
+        <visual name="p242"><pose>19.04 -11.28 0 0 0 1.38</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.05 1.05 1.05</scale></mesh></geometry></visual>
+        <visual name="p243"><pose>0.69 -12.38 0 0 0 2.70</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>0.94 0.94 0.94</scale></mesh></geometry></visual>
+        <visual name="p244"><pose>1.45 -12.34 0 0 0 1.03</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.09 1.09 1.09</scale></mesh></geometry></visual>
+        <visual name="p245"><pose>2.28 -12.41 0 0 0 0.62</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>0.91 0.91 0.91</scale></mesh></geometry></visual>
+        <visual name="p246"><pose>3.07 -12.26 0 0 0 3.27</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.07 1.07 1.07</scale></mesh></geometry></visual>
+        <visual name="p247"><pose>3.78 -12.37 0 0 0 6.07</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.14 1.14 1.14</scale></mesh></geometry></visual>
+        <visual name="p248"><pose>4.67 -12.40 0 0 0 6.05</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.03 1.03 1.03</scale></mesh></geometry></visual>
+        <visual name="p249"><pose>5.45 -12.33 0 0 0 3.70</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>0.96 0.96 0.96</scale></mesh></geometry></visual>
+        <visual name="p250"><pose>6.21 -12.30 0 0 0 2.17</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_0.obj</uri><scale>0.90 0.90 0.90</scale></mesh></geometry></visual>
+        <visual name="p251"><pose>7.04 -12.29 0 0 0 2.67</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_1.obj</uri><scale>0.87 0.87 0.87</scale></mesh></geometry></visual>
+        <visual name="p252"><pose>9.45 -12.39 0 0 0 6.28</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/stressed_1.obj</uri><scale>0.97 0.97 0.97</scale></mesh></geometry></visual>
+        <visual name="p253"><pose>10.31 -12.26 0 0 0 4.01</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.12 1.12 1.12</scale></mesh></geometry></visual>
+        <visual name="p254"><pose>11.14 -12.41 0 0 0 3.44</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.07 1.07 1.07</scale></mesh></geometry></visual>
+        <visual name="p255"><pose>11.86 -12.32 0 0 0 5.74</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>0.96 0.96 0.96</scale></mesh></geometry></visual>
+        <visual name="p256"><pose>12.60 -12.31 0 0 0 0.88</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.14 1.14 1.14</scale></mesh></geometry></visual>
+        <visual name="p257"><pose>13.57 -12.36 0 0 0 5.64</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>0.93 0.93 0.93</scale></mesh></geometry></visual>
+        <visual name="p258"><pose>14.21 -12.28 0 0 0 4.19</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.15 1.15 1.15</scale></mesh></geometry></visual>
+        <visual name="p259"><pose>15.15 -12.37 0 0 0 4.34</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.10 1.10 1.10</scale></mesh></geometry></visual>
+        <visual name="p260"><pose>16.00 -12.41 0 0 0 2.61</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>0.95 0.95 0.95</scale></mesh></geometry></visual>
+        <visual name="p261"><pose>16.81 -12.42 0 0 0 1.72</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>0.91 0.91 0.91</scale></mesh></geometry></visual>
+        <visual name="p262"><pose>17.48 -12.37 0 0 0 4.24</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.07 1.07 1.07</scale></mesh></geometry></visual>
+        <visual name="p263"><pose>18.35 -12.37 0 0 0 4.89</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.09 1.09 1.09</scale></mesh></geometry></visual>
+        <visual name="p264"><pose>19.19 -12.30 0 0 0 2.04</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.02 1.02 1.02</scale></mesh></geometry></visual>
+        <visual name="p265"><pose>0.62 -13.43 0 0 0 3.72</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.14 1.14 1.14</scale></mesh></geometry></visual>
+        <visual name="p266"><pose>1.49 -13.38 0 0 0 2.90</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>0.95 0.95 0.95</scale></mesh></geometry></visual>
+        <visual name="p267"><pose>2.35 -13.42 0 0 0 0.57</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>0.98 0.98 0.98</scale></mesh></geometry></visual>
+        <visual name="p268"><pose>3.04 -13.35 0 0 0 3.61</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.22 1.22 1.22</scale></mesh></geometry></visual>
+        <visual name="p269"><pose>3.97 -13.45 0 0 0 1.53</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.05 1.05 1.05</scale></mesh></geometry></visual>
+        <visual name="p270"><pose>4.73 -13.39 0 0 0 6.13</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.06 1.06 1.06</scale></mesh></geometry></visual>
+        <visual name="p271"><pose>5.50 -13.45 0 0 0 4.73</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.14 1.14 1.14</scale></mesh></geometry></visual>
+        <visual name="p272"><pose>6.30 -13.47 0 0 0 6.24</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.10 1.10 1.10</scale></mesh></geometry></visual>
+        <visual name="p273"><pose>7.11 -13.43 0 0 0 0.95</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.18 1.18 1.18</scale></mesh></geometry></visual>
+        <visual name="p274"><pose>7.80 -13.34 0 0 0 1.37</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.20 1.20 1.20</scale></mesh></geometry></visual>
+        <visual name="p275"><pose>8.76 -13.43 0 0 0 1.02</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.10 1.10 1.10</scale></mesh></geometry></visual>
+        <visual name="p276"><pose>9.60 -13.32 0 0 0 4.33</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>0.94 0.94 0.94</scale></mesh></geometry></visual>
+        <visual name="p277"><pose>10.37 -13.34 0 0 0 3.82</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.24 1.24 1.24</scale></mesh></geometry></visual>
+        <visual name="p278"><pose>11.01 -13.43 0 0 0 1.08</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.13 1.13 1.13</scale></mesh></geometry></visual>
+        <visual name="p279"><pose>11.85 -13.39 0 0 0 1.65</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>1.00 1.00 1.00</scale></mesh></geometry></visual>
+        <visual name="p280"><pose>12.65 -13.44 0 0 0 3.20</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>0.96 0.96 0.96</scale></mesh></geometry></visual>
+        <visual name="p281"><pose>13.59 -13.33 0 0 0 3.83</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.18 1.18 1.18</scale></mesh></geometry></visual>
+        <visual name="p282"><pose>14.22 -13.35 0 0 0 4.42</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.17 1.17 1.17</scale></mesh></geometry></visual>
+        <visual name="p283"><pose>15.04 -13.49 0 0 0 5.89</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.13 1.13 1.13</scale></mesh></geometry></visual>
+        <visual name="p284"><pose>15.91 -13.40 0 0 0 4.31</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.16 1.16 1.16</scale></mesh></geometry></visual>
+        <visual name="p285"><pose>16.81 -13.40 0 0 0 3.56</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_1.obj</uri><scale>1.21 1.21 1.21</scale></mesh></geometry></visual>
+        <visual name="p286"><pose>17.40 -13.39 0 0 0 3.61</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.16 1.16 1.16</scale></mesh></geometry></visual>
+        <visual name="p287"><pose>18.25 -13.50 0 0 0 5.87</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_0.obj</uri><scale>0.97 0.97 0.97</scale></mesh></geometry></visual>
+        <visual name="p288"><pose>19.07 -13.43 0 0 0 0.88</pose>
+          <geometry><mesh><uri>model://tomato_plants/meshes/healthy_2.obj</uri><scale>1.13 1.13 1.13</scale></mesh></geometry></visual>
+      </link>
+    </model>
+
+    <!-- linderos -->
+    <model name="boundary_posts">
+      <static>true</static>
+      <link name="posts">
+        <visual name="post_0"><pose>-1.2 0.8 0.9 0 0 0</pose>
+          <geometry><cylinder><radius>0.10</radius><length>1.8</length></cylinder></geometry>
+          <material><ambient>0.28 0.19 0.10 1</ambient><diffuse>0.36 0.25 0.13 1</diffuse></material></visual>
+        <visual name="post_1"><pose>21.2 0.8 0.9 0 0 0</pose>
+          <geometry><cylinder><radius>0.10</radius><length>1.8</length></cylinder></geometry>
+          <material><ambient>0.28 0.19 0.10 1</ambient><diffuse>0.36 0.25 0.13 1</diffuse></material></visual>
+        <visual name="post_2"><pose>-1.2 -14.8 0.9 0 0 0</pose>
+          <geometry><cylinder><radius>0.10</radius><length>1.8</length></cylinder></geometry>
+          <material><ambient>0.28 0.19 0.10 1</ambient><diffuse>0.36 0.25 0.13 1</diffuse></material></visual>
+        <visual name="post_3"><pose>21.2 -14.8 0.9 0 0 0</pose>
+          <geometry><cylinder><radius>0.10</radius><length>1.8</length></cylinder></geometry>
+          <material><ambient>0.28 0.19 0.10 1</ambient><diffuse>0.36 0.25 0.13 1</diffuse></material></visual>
+      </link>
+    </model>
+  </world>
+</sdf>

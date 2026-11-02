@@ -1,0 +1,776 @@
+{
+ "threshold": 0.65,
+ "n_calib": 10,
+ "n_trials": 30,
+ "precision": {
+  "mean": 0.6829,
+  "std": 0.2156,
+  "p05": 0.2609,
+  "p95": 0.87
+ },
+ "recall": {
+  "mean": 0.6407,
+  "std": 0.2469,
+  "p05": 0.2113,
+  "p95": 0.8601
+ },
+ "f1": {
+  "mean": 0.6067,
+  "std": 0.1999,
+  "p05": 0.1695,
+  "p95": 0.7651
+ },
+ "zone_detection_rate": 0.8367,
+ "ndvi_healthy": {
+  "mean": 0.8514,
+  "std": 0.0002,
+  "p05": 0.8509,
+  "p95": 0.8517
+ },
+ "ndvi_diseased": {
+  "mean": 0.4276,
+  "std": 0.0008,
+  "p05": 0.4263,
+  "p95": 0.4288
+ },
+ "ndvi_soil": {
+  "mean": 0.0907,
+  "std": 0.0003,
+  "p05": 0.0902,
+  "p95": 0.0911
+ },
+ "ndwi_healthy": {
+  "mean": 0.2496,
+  "std": 0.0003,
+  "p05": 0.249,
+  "p95": 0.2499
+ },
+ "ndwi_diseased": {
+  "mean": -0.0476,
+  "std": 0.0008,
+  "p05": -0.0486,
+  "p95": -0.0467
+ },
+ "calibration_curve": [
+  [
+   0.05,
+   0.5205
+  ],
+  [
+   0.075,
+   0.5808
+  ],
+  [
+   0.1,
+   0.5922
+  ],
+  [
+   0.125,
+   0.5958
+  ],
+  [
+   0.15,
+   0.5966
+  ],
+  [
+   0.175,
+   0.6009
+  ],
+  [
+   0.2,
+   0.6014
+  ],
+  [
+   0.225,
+   0.6018
+  ],
+  [
+   0.25,
+   0.6019
+  ],
+  [
+   0.275,
+   0.6019
+  ],
+  [
+   0.3,
+   0.602
+  ],
+  [
+   0.325,
+   0.602
+  ],
+  [
+   0.35,
+   0.602
+  ],
+  [
+   0.375,
+   0.602
+  ],
+  [
+   0.4,
+   0.6021
+  ],
+  [
+   0.425,
+   0.6021
+  ],
+  [
+   0.45,
+   0.6021
+  ],
+  [
+   0.475,
+   0.6021
+  ],
+  [
+   0.5,
+   0.6021
+  ],
+  [
+   0.525,
+   0.6021
+  ],
+  [
+   0.55,
+   0.6021
+  ],
+  [
+   0.575,
+   0.6024
+  ],
+  [
+   0.6,
+   0.6032
+  ],
+  [
+   0.625,
+   0.604
+  ],
+  [
+   0.65,
+   0.6051
+  ],
+  [
+   0.675,
+   0.6038
+  ],
+  [
+   0.7,
+   0.5678
+  ],
+  [
+   0.725,
+   0.5563
+  ],
+  [
+   0.75,
+   0.5986
+  ],
+  [
+   0.775,
+   0.5464
+  ],
+  [
+   0.8,
+   0.4455
+  ],
+  [
+   0.825,
+   0.301
+  ],
+  [
+   0.85,
+   0.2496
+  ],
+  [
+   0.875,
+   0.2232
+  ],
+  [
+   0.9,
+   0.1428
+  ],
+  [
+   0.925,
+   0.1366
+  ],
+  [
+   0.95,
+   0.1357
+  ]
+ ],
+ "trials": [
+  {
+   "tp": 1258,
+   "fp": 190,
+   "fn": 4252,
+   "precision": 0.8688,
+   "recall": 0.2283,
+   "f1": 0.3616,
+   "seed": 1000,
+   "threshold": 0.65,
+   "zones_flagged": 3,
+   "zones_gt": 5,
+   "area_gt_m2": 13.78,
+   "area_pred_m2": 3.62,
+   "ndvi_healthy": 0.851189911365509,
+   "ndvi_diseased": 0.4282836616039276,
+   "ndvi_soil": 0.09071725606918335,
+   "ndwi_healthy": 0.24887752532958984,
+   "ndwi_diseased": -0.04670995846390724
+  },
+  {
+   "tp": 3490,
+   "fp": 715,
+   "fn": 2084,
+   "precision": 0.83,
+   "recall": 0.6261,
+   "f1": 0.7138,
+   "seed": 1001,
+   "threshold": 0.65,
+   "zones_flagged": 8,
+   "zones_gt": 4,
+   "area_gt_m2": 13.94,
+   "area_pred_m2": 10.51,
+   "ndvi_healthy": 0.8513913750648499,
+   "ndvi_diseased": 0.4265975058078766,
+   "ndvi_soil": 0.09075997024774551,
+   "ndwi_healthy": 0.2494598627090454,
+   "ndwi_diseased": -0.048407819122076035
+  },
+  {
+   "tp": 7158,
+   "fp": 3074,
+   "fn": 1100,
+   "precision": 0.6996,
+   "recall": 0.8668,
+   "f1": 0.7743,
+   "seed": 1002,
+   "threshold": 0.65,
+   "zones_flagged": 3,
+   "zones_gt": 5,
+   "area_gt_m2": 20.65,
+   "area_pred_m2": 25.58,
+   "ndvi_healthy": 0.851545512676239,
+   "ndvi_diseased": 0.4277559816837311,
+   "ndvi_soil": 0.09091859310865402,
+   "ndwi_healthy": 0.24963080883026123,
+   "ndwi_diseased": -0.0484260730445385
+  },
+  {
+   "tp": 6770,
+   "fp": 3216,
+   "fn": 1241,
+   "precision": 0.6779,
+   "recall": 0.8451,
+   "f1": 0.7523,
+   "seed": 1003,
+   "threshold": 0.65,
+   "zones_flagged": 3,
+   "zones_gt": 5,
+   "area_gt_m2": 20.03,
+   "area_pred_m2": 24.97,
+   "ndvi_healthy": 0.8513463139533997,
+   "ndvi_diseased": 0.42634546756744385,
+   "ndvi_soil": 0.09018971025943756,
+   "ndwi_healthy": 0.249928817152977,
+   "ndwi_diseased": -0.04845738783478737
+  },
+  {
+   "tp": 8102,
+   "fp": 6276,
+   "fn": 1931,
+   "precision": 0.5635,
+   "recall": 0.8075,
+   "f1": 0.6638,
+   "seed": 1004,
+   "threshold": 0.65,
+   "zones_flagged": 4,
+   "zones_gt": 5,
+   "area_gt_m2": 25.08,
+   "area_pred_m2": 35.95,
+   "ndvi_healthy": 0.8509050011634827,
+   "ndvi_diseased": 0.425737589597702,
+   "ndvi_soil": 0.09005429595708847,
+   "ndwi_healthy": 0.2495116889476776,
+   "ndwi_diseased": -0.04861757159233093
+  },
+  {
+   "tp": 794,
+   "fp": 135,
+   "fn": 1729,
+   "precision": 0.8547,
+   "recall": 0.3147,
+   "f1": 0.46,
+   "seed": 1005,
+   "threshold": 0.65,
+   "zones_flagged": 2,
+   "zones_gt": 2,
+   "area_gt_m2": 6.31,
+   "area_pred_m2": 2.32,
+   "ndvi_healthy": 0.8514284491539001,
+   "ndvi_diseased": 0.4275181293487549,
+   "ndvi_soil": 0.09078045189380646,
+   "ndwi_healthy": 0.24988526105880737,
+   "ndwi_diseased": -0.048076286911964417
+  },
+  {
+   "tp": 7159,
+   "fp": 5833,
+   "fn": 1373,
+   "precision": 0.551,
+   "recall": 0.8391,
+   "f1": 0.6652,
+   "seed": 1006,
+   "threshold": 0.65,
+   "zones_flagged": 3,
+   "zones_gt": 5,
+   "area_gt_m2": 21.33,
+   "area_pred_m2": 32.48,
+   "ndvi_healthy": 0.851270318031311,
+   "ndvi_diseased": 0.42703449726104736,
+   "ndvi_soil": 0.09062520414590836,
+   "ndwi_healthy": 0.24967268109321594,
+   "ndwi_diseased": -0.04685041680932045
+  },
+  {
+   "tp": 5209,
+   "fp": 1690,
+   "fn": 1712,
+   "precision": 0.755,
+   "recall": 0.7526,
+   "f1": 0.7538,
+   "seed": 1007,
+   "threshold": 0.65,
+   "zones_flagged": 6,
+   "zones_gt": 3,
+   "area_gt_m2": 17.3,
+   "area_pred_m2": 17.25,
+   "ndvi_healthy": 0.8515152931213379,
+   "ndvi_diseased": 0.4278842806816101,
+   "ndvi_soil": 0.0909770131111145,
+   "ndwi_healthy": 0.24981440603733063,
+   "ndwi_diseased": -0.048531778156757355
+  },
+  {
+   "tp": 824,
+   "fp": 142,
+   "fn": 3353,
+   "precision": 0.853,
+   "recall": 0.1973,
+   "f1": 0.3204,
+   "seed": 1008,
+   "threshold": 0.65,
+   "zones_flagged": 2,
+   "zones_gt": 4,
+   "area_gt_m2": 10.44,
+   "area_pred_m2": 2.42,
+   "ndvi_healthy": 0.8515118956565857,
+   "ndvi_diseased": 0.4288420081138611,
+   "ndvi_soil": 0.091027170419693,
+   "ndwi_healthy": 0.24973969161510468,
+   "ndwi_diseased": -0.04773927479982376
+  },
+  {
+   "tp": 5375,
+   "fp": 3659,
+   "fn": 1807,
+   "precision": 0.595,
+   "recall": 0.7484,
+   "f1": 0.6629,
+   "seed": 1009,
+   "threshold": 0.65,
+   "zones_flagged": 4,
+   "zones_gt": 4,
+   "area_gt_m2": 17.96,
+   "area_pred_m2": 22.59,
+   "ndvi_healthy": 0.8512920141220093,
+   "ndvi_diseased": 0.42725393176078796,
+   "ndvi_soil": 0.09063336998224258,
+   "ndwi_healthy": 0.2494487166404724,
+   "ndwi_diseased": -0.0486474335193634
+  },
+  {
+   "tp": 7106,
+   "fp": 5392,
+   "fn": 1474,
+   "precision": 0.5686,
+   "recall": 0.8282,
+   "f1": 0.6743,
+   "seed": 1010,
+   "threshold": 0.65,
+   "zones_flagged": 4,
+   "zones_gt": 5,
+   "area_gt_m2": 21.45,
+   "area_pred_m2": 31.25,
+   "ndvi_healthy": 0.8516100645065308,
+   "ndvi_diseased": 0.42790016531944275,
+   "ndvi_soil": 0.09091336280107498,
+   "ndwi_healthy": 0.24961434304714203,
+   "ndwi_diseased": -0.04692011699080467
+  },
+  {
+   "tp": 8236,
+   "fp": 4235,
+   "fn": 2027,
+   "precision": 0.6604,
+   "recall": 0.8025,
+   "f1": 0.7246,
+   "seed": 1011,
+   "threshold": 0.65,
+   "zones_flagged": 5,
+   "zones_gt": 5,
+   "area_gt_m2": 25.66,
+   "area_pred_m2": 31.18,
+   "ndvi_healthy": 0.8514489531517029,
+   "ndvi_diseased": 0.4272233247756958,
+   "ndvi_soil": 0.09049293398857117,
+   "ndwi_healthy": 0.24953937530517578,
+   "ndwi_diseased": -0.04813922569155693
+  },
+  {
+   "tp": 6007,
+   "fp": 3814,
+   "fn": 2007,
+   "precision": 0.6116,
+   "recall": 0.7496,
+   "f1": 0.6736,
+   "seed": 1012,
+   "threshold": 0.65,
+   "zones_flagged": 4,
+   "zones_gt": 5,
+   "area_gt_m2": 20.04,
+   "area_pred_m2": 24.55,
+   "ndvi_healthy": 0.8516649007797241,
+   "ndvi_diseased": 0.4283656179904938,
+   "ndvi_soil": 0.09076032042503357,
+   "ndwi_healthy": 0.2495964914560318,
+   "ndwi_diseased": -0.04686279967427254
+  },
+  {
+   "tp": 3241,
+   "fp": 2022,
+   "fn": 563,
+   "precision": 0.6158,
+   "recall": 0.852,
+   "f1": 0.7149,
+   "seed": 1013,
+   "threshold": 0.65,
+   "zones_flagged": 1,
+   "zones_gt": 2,
+   "area_gt_m2": 9.51,
+   "area_pred_m2": 13.16,
+   "ndvi_healthy": 0.8515421748161316,
+   "ndvi_diseased": 0.4282853603363037,
+   "ndvi_soil": 0.09080179035663605,
+   "ndwi_healthy": 0.24983757734298706,
+   "ndwi_diseased": -0.04786447063088417
+  },
+  {
+   "tp": 1201,
+   "fp": 178,
+   "fn": 2466,
+   "precision": 0.8709,
+   "recall": 0.3275,
+   "f1": 0.476,
+   "seed": 1014,
+   "threshold": 0.65,
+   "zones_flagged": 3,
+   "zones_gt": 2,
+   "area_gt_m2": 9.17,
+   "area_pred_m2": 3.45,
+   "ndvi_healthy": 0.8510776162147522,
+   "ndvi_diseased": 0.4276879131793976,
+   "ndvi_soil": 0.09069973975419998,
+   "ndwi_healthy": 0.24902604520320892,
+   "ndwi_diseased": -0.04885297641158104
+  },
+  {
+   "tp": 6700,
+   "fp": 4364,
+   "fn": 1918,
+   "precision": 0.6056,
+   "recall": 0.7774,
+   "f1": 0.6808,
+   "seed": 1015,
+   "threshold": 0.65,
+   "zones_flagged": 4,
+   "zones_gt": 5,
+   "area_gt_m2": 21.55,
+   "area_pred_m2": 27.66,
+   "ndvi_healthy": 0.8516529202461243,
+   "ndvi_diseased": 0.42821216583251953,
+   "ndvi_soil": 0.09080088138580322,
+   "ndwi_healthy": 0.24976831674575806,
+   "ndwi_diseased": -0.04795437678694725
+  },
+  {
+   "tp": 5152,
+   "fp": 3331,
+   "fn": 1257,
+   "precision": 0.6073,
+   "recall": 0.8039,
+   "f1": 0.6919,
+   "seed": 1016,
+   "threshold": 0.65,
+   "zones_flagged": 3,
+   "zones_gt": 3,
+   "area_gt_m2": 16.02,
+   "area_pred_m2": 21.21,
+   "ndvi_healthy": 0.851300835609436,
+   "ndvi_diseased": 0.42693719267845154,
+   "ndvi_soil": 0.09114035218954086,
+   "ndwi_healthy": 0.24973224103450775,
+   "ndwi_diseased": -0.04768882691860199
+  },
+  {
+   "tp": 1677,
+   "fp": 276,
+   "fn": 3072,
+   "precision": 0.8587,
+   "recall": 0.3531,
+   "f1": 0.5004,
+   "seed": 1017,
+   "threshold": 0.65,
+   "zones_flagged": 4,
+   "zones_gt": 3,
+   "area_gt_m2": 11.87,
+   "area_pred_m2": 4.88,
+   "ndvi_healthy": 0.8513418436050415,
+   "ndvi_diseased": 0.42629823088645935,
+   "ndvi_soil": 0.09063655883073807,
+   "ndwi_healthy": 0.25006118416786194,
+   "ndwi_diseased": -0.04800398275256157
+  },
+  {
+   "tp": 2453,
+   "fp": 101783,
+   "fn": 1,
+   "precision": 0.0235,
+   "recall": 0.9996,
+   "f1": 0.046,
+   "seed": 1018,
+   "threshold": 0.65,
+   "zones_flagged": 1,
+   "zones_gt": 2,
+   "area_gt_m2": 6.14,
+   "area_pred_m2": 260.59,
+   "ndvi_healthy": 0.8514990210533142,
+   "ndvi_diseased": 0.4286988079547882,
+   "ndvi_soil": 0.09084054827690125,
+   "ndwi_healthy": 0.24973618984222412,
+   "ndwi_diseased": -0.04474252834916115
+  },
+  {
+   "tp": 6448,
+   "fp": 1164,
+   "fn": 2060,
+   "precision": 0.8471,
+   "recall": 0.7579,
+   "f1": 0.8,
+   "seed": 1019,
+   "threshold": 0.65,
+   "zones_flagged": 12,
+   "zones_gt": 4,
+   "area_gt_m2": 21.27,
+   "area_pred_m2": 19.03,
+   "ndvi_healthy": 0.8509598970413208,
+   "ndvi_diseased": 0.42735132575035095,
+   "ndvi_soil": 0.0907570868730545,
+   "ndwi_healthy": 0.2490130215883255,
+   "ndwi_diseased": -0.047442927956581116
+  },
+  {
+   "tp": 2295,
+   "fp": 978,
+   "fn": 713,
+   "precision": 0.7012,
+   "recall": 0.763,
+   "f1": 0.7308,
+   "seed": 1020,
+   "threshold": 0.65,
+   "zones_flagged": 3,
+   "zones_gt": 2,
+   "area_gt_m2": 7.52,
+   "area_pred_m2": 8.18,
+   "ndvi_healthy": 0.851517379283905,
+   "ndvi_diseased": 0.4279264509677887,
+   "ndvi_soil": 0.09070111066102982,
+   "ndwi_healthy": 0.24984091520309448,
+   "ndwi_diseased": -0.04712577909231186
+  },
+  {
+   "tp": 5641,
+   "fp": 3411,
+   "fn": 1006,
+   "precision": 0.6232,
+   "recall": 0.8487,
+   "f1": 0.7186,
+   "seed": 1021,
+   "threshold": 0.65,
+   "zones_flagged": 3,
+   "zones_gt": 3,
+   "area_gt_m2": 16.62,
+   "area_pred_m2": 22.63,
+   "ndvi_healthy": 0.8511310815811157,
+   "ndvi_diseased": 0.4272746741771698,
+   "ndvi_soil": 0.09130877256393433,
+   "ndwi_healthy": 0.24928875267505646,
+   "ndwi_diseased": -0.04712331295013428
+  },
+  {
+   "tp": 3529,
+   "fp": 553,
+   "fn": 3162,
+   "precision": 0.8645,
+   "recall": 0.5274,
+   "f1": 0.6552,
+   "seed": 1022,
+   "threshold": 0.65,
+   "zones_flagged": 7,
+   "zones_gt": 5,
+   "area_gt_m2": 16.73,
+   "area_pred_m2": 10.21,
+   "ndvi_healthy": 0.8511521816253662,
+   "ndvi_diseased": 0.42737603187561035,
+   "ndvi_soil": 0.09050687402486801,
+   "ndwi_healthy": 0.2490023374557495,
+   "ndwi_diseased": -0.04688449949026108
+  },
+  {
+   "tp": 3496,
+   "fp": 1570,
+   "fn": 1266,
+   "precision": 0.6901,
+   "recall": 0.7341,
+   "f1": 0.7114,
+   "seed": 1023,
+   "threshold": 0.65,
+   "zones_flagged": 4,
+   "zones_gt": 3,
+   "area_gt_m2": 11.91,
+   "area_pred_m2": 12.67,
+   "ndvi_healthy": 0.8515315651893616,
+   "ndvi_diseased": 0.4283266067504883,
+   "ndvi_soil": 0.0908479392528534,
+   "ndwi_healthy": 0.24965642392635345,
+   "ndwi_diseased": -0.04744209721684456
+  },
+  {
+   "tp": 0,
+   "fp": 0,
+   "fn": 2505,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "seed": 1024,
+   "threshold": 0.65,
+   "zones_flagged": 0,
+   "zones_gt": 3,
+   "area_gt_m2": 6.26,
+   "area_pred_m2": 0.0,
+   "ndvi_healthy": 0.851641058921814,
+   "ndvi_diseased": 0.4274499714374542,
+   "ndvi_soil": 0.09055861085653305,
+   "ndwi_healthy": 0.24965843558311462,
+   "ndwi_diseased": -0.04775708541274071
+  },
+  {
+   "tp": 3179,
+   "fp": 610,
+   "fn": 1718,
+   "precision": 0.839,
+   "recall": 0.6492,
+   "f1": 0.732,
+   "seed": 1025,
+   "threshold": 0.65,
+   "zones_flagged": 7,
+   "zones_gt": 2,
+   "area_gt_m2": 12.24,
+   "area_pred_m2": 9.47,
+   "ndvi_healthy": 0.8516057133674622,
+   "ndvi_diseased": 0.42829039692878723,
+   "ndvi_soil": 0.09088215976953506,
+   "ndwi_healthy": 0.24958200752735138,
+   "ndwi_diseased": -0.04816240072250366
+  },
+  {
+   "tp": 2898,
+   "fp": 531,
+   "fn": 1936,
+   "precision": 0.8451,
+   "recall": 0.5995,
+   "f1": 0.7014,
+   "seed": 1026,
+   "threshold": 0.65,
+   "zones_flagged": 5,
+   "zones_gt": 2,
+   "area_gt_m2": 12.09,
+   "area_pred_m2": 8.57,
+   "ndvi_healthy": 0.8508025407791138,
+   "ndvi_diseased": 0.4272882342338562,
+   "ndvi_soil": 0.09114974737167358,
+   "ndwi_healthy": 0.24912476539611816,
+   "ndwi_diseased": -0.0478346087038517
+  },
+  {
+   "tp": 814,
+   "fp": 110,
+   "fn": 1899,
+   "precision": 0.881,
+   "recall": 0.3,
+   "f1": 0.4476,
+   "seed": 1027,
+   "threshold": 0.65,
+   "zones_flagged": 2,
+   "zones_gt": 2,
+   "area_gt_m2": 6.78,
+   "area_pred_m2": 2.31,
+   "ndvi_healthy": 0.8517057299613953,
+   "ndvi_diseased": 0.429469496011734,
+   "ndvi_soil": 0.09097223728895187,
+   "ndwi_healthy": 0.2499217689037323,
+   "ndwi_diseased": -0.0475057028234005
+  },
+  {
+   "tp": 6088,
+   "fp": 3077,
+   "fn": 2049,
+   "precision": 0.6643,
+   "recall": 0.7482,
+   "f1": 0.7037,
+   "seed": 1028,
+   "threshold": 0.65,
+   "zones_flagged": 7,
+   "zones_gt": 5,
+   "area_gt_m2": 20.34,
+   "area_pred_m2": 22.91,
+   "ndvi_healthy": 0.8509626984596252,
+   "ndvi_diseased": 0.42734232544898987,
+   "ndvi_soil": 0.09018170088529587,
+   "ndwi_healthy": 0.24902045726776123,
+   "ndwi_diseased": -0.04740452393889427
+  },
+  {
+   "tp": 3180,
+   "fp": 515,
+   "fn": 2359,
+   "precision": 0.8606,
+   "recall": 0.5741,
+   "f1": 0.6888,
+   "seed": 1029,
+   "threshold": 0.65,
+   "zones_flagged": 6,
+   "zones_gt": 4,
+   "area_gt_m2": 13.85,
+   "area_pred_m2": 9.24,
+   "ndvi_healthy": 0.8514509201049805,
+   "ndvi_diseased": 0.42820078134536743,
+   "ndvi_soil": 0.0905361920595169,
+   "ndwi_healthy": 0.24986855685710907,
+   "ndwi_diseased": -0.04679722338914871
+  }
+ ]
+}

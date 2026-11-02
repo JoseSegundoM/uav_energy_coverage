@@ -1,0 +1,37 @@
+% PDF profiles from one source.
+%   interactive: blue mailto/DOI/URL links and a clickable ORCID logo.
+%   ieee (default): no link annotations and no bookmarks, for IEEE PDF eXpress;
+%   metadata written with \pdfinfo; ORCID logo kept as plain vector art.
+% Select with \def\PDFPROFILE{interactive} before \input{main.tex}.
+% Requires \PaperTitle, \PaperAuthors (UTF-8, hyperref) and \PaperAuthorsPDF
+% (PDFDocEncoding octal escapes, \pdfinfo) to be defined first.
+\ifdefined\PDFPROFILE\else\def\PDFPROFILE{ieee}\fi
+\def\profileinteractive{interactive}
+\usepackage{tikz}
+\usetikzlibrary{svg.path}
+\definecolor{orcidlogocol}{HTML}{A6CE39}
+% ORCID iD logo, same artwork as the orcidlink package (vector, no Type 3).
+\newlength{\orcidxheight}
+\newcommand{\orcidlogo}{\setlength{\orcidxheight}{\fontcharht\font`X}%
+  \mbox{\begin{tikzpicture}[yscale=-0.00390625*\orcidxheight,
+      xscale=0.00390625*\orcidxheight,transform shape]
+    \fill[orcidlogocol] svg{M256,128c0,70.7-57.3,128-128,128C57.3,256,0,198.7,0,128C0,57.3,57.3,0,128,0C198.7,0,256,57.3,256,128z};
+    \fill[white] svg{M86.3,186.2H70.9V79.1h15.4v48.4V186.2z}
+      svg{M108.9,79.1h41.6c39.6,0,57,28.3,57,53.6c0,27.5-21.5,53.6-56.8,53.6h-41.8V79.1z M124.3,172.4h24.5c34.9,0,42.9-26.5,42.9-39.7c0-21.5-13.7-39.7-43.7-39.7h-23.7V172.4z}
+      svg{M88.7,56.8c0,5.5-4.5,10.1-10.1,10.1c-5.6,0-10.1-4.6-10.1-10.1c0-5.6,4.5-10.1,10.1-10.1C84.2,46.7,88.7,51.3,88.7,56.8z};
+  \end{tikzpicture}}}
+\ifx\PDFPROFILE\profileinteractive
+  \usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue,
+              bookmarks=false]{hyperref}
+  \hypersetup{pdftitle={\PaperTitle},pdfauthor={\PaperAuthors}}
+  \newcommand{\orcid}[1]{\href{https://orcid.org/#1}{\orcidlogo}}
+  \newcommand{\authoremail}[1]{\href{mailto:#1}{#1}}
+  \newcommand{\doititle}[2]{\href{https://doi.org/#1}{#2}}
+  \newcommand{\urltitle}[2]{\href{#1}{#2}}
+\else
+  \pdfinfo{/Title (\PaperTitle) /Author (\PaperAuthorsPDF)}
+  \newcommand{\orcid}[1]{\orcidlogo}
+  \newcommand{\authoremail}[1]{#1}
+  \newcommand{\doititle}[2]{#2}
+  \newcommand{\urltitle}[2]{#2}
+\fi

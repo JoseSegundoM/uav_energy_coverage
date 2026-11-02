@@ -1,0 +1,21 @@
+# Normalise text line endings inside the repository
+* text=auto
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.gif binary
+*.mp4 binary
+*.pdf binary
+*.onnx binary
+*.zip binary
+*.dae binary
+
+# GitHub Linguist — keep the language stats honest.
+# The acados C code is machine-generated, the world/SDF files are authored by a
+# generator script, and the CSV logs are data. Python and C++ are the genuine
+# authored work and stay counted.
+src/uav_nmpc_controller/acados_generated/** linguist-generated
+nmpc_model/c_generated_code/** linguist-generated
+*.csv linguist-generated
+*.world linguist-generated

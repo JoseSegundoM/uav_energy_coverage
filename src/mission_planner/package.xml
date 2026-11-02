@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>mission_planner</name>
+  <version>1.0.0</version>
+  <description>Planificador de cobertura boustrophedon (zigzag) para misiones UAV agrícolas. Publica la referencia temporizada para el NMPC.</description>
+  <maintainer email="jose.segundo.m@uni.pe">José Luis Segundo Manayay</maintainer>
+  <license>MIT</license>
+  <author email="jose.segundo.m@uni.pe">José Luis Segundo Manayay</author>
+  <author>Luis Ángel Vilcamiche Fernández</author>
+  <buildtool_depend>ament_python</buildtool_depend>
+  <depend>rclpy</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-shapely</exec_depend>
+  <export><build_type>ament_python</build_type></export>
+</package>

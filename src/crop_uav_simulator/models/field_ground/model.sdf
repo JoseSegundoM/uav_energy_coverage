@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="field_ground">
+    <static>true</static>
+    <link name="link">
+      <visual name="soil">
+        <pose>10 -7 0.01 0 0 0</pose>
+        <geometry><box><size>26.0 20.0 0.02</size></box></geometry>
+        <material>
+          <script>
+            <uri>model://field_ground/materials/scripts</uri>
+            <uri>model://field_ground/materials/textures</uri>
+            <name>Field/Soil</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

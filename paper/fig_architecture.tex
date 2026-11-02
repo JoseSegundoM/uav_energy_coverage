@@ -1,0 +1,54 @@
+% Fig. 1: evaluation architecture used for every closed-loop result
+% (scripts/mc_experiments.py, Python). Solid: executed loop; dashed: exogenous
+% inputs; dotted grey: auxiliary offline perception benchmark (no feedback).
+\begin{tikzpicture}[x=1mm, y=1mm, font=\scriptsize, line width=0.55pt,
+  >={Stealth[length=2.1mm, width=1.6mm]},
+  blk/.style={draw, rounded corners=1.2pt, align=center, fill=white, inner sep=1.5pt},
+  grp/.style={draw=black!35, rounded corners=3pt, line width=0.4pt},
+  hdr/.style={font=\scriptsize\bfseries, anchor=south west, inner sep=0.8pt},
+  flow/.style={->, line width=0.65pt}]
+% ---------------- A. mission planning
+\node[blk, minimum width=17mm, minimum height=10mm] (field) at (9,0) {field polygon\\+ exclusion\\zones};
+\node[blk, minimum width=20mm, minimum height=10mm] (cells) at (31.5,0) {boustrophedon\\cells, routed\\row links};
+\node[blk, minimum width=18mm, minimum height=10mm] (order) at (54,0) {cell ordering\\(Held--Karp)};
+\node[blk, minimum width=20mm, minimum height=10mm] (ref) at (76.5,0) {timed reference\\rest-to-rest};
+\draw[flow] (field) -- (cells); \draw[flow] (cells) -- (order); \draw[flow] (order) -- (ref);
+% ---------------- B. flight control
+\node[blk, minimum width=27mm, minimum height=9mm] (nmpc) at (113,8) {NMPC (\texttt{acados})\\$N{=}50$, $\Delta t{=}10$~ms};
+\node[blk, minimum width=27mm, minimum height=9mm] (base) at (113,-8) {PID / LQR baselines\\(+FF in the ablation)};
+\draw[flow] (ref.east) -- (91,0) |- (nmpc.west);
+\node[anchor=east, inner sep=1pt] at (90.5,10) {$p_{\mathrm{ref}}$, 0.5~s ahead};
+\draw[flow] (ref.east) -- (91,0) |- (base.west);
+\node[anchor=east, inner sep=1pt] at (90.5,-10) {$p_{\mathrm{ref}}(t)$, $v_{\mathrm{ref}}(t)$};
+% ---------------- delay and C. plant
+\node[blk, minimum width=13mm, minimum height=9mm, fill=black!5] (delay) at (141,0) {delay\\buffer $\tau_d$};
+\draw[flow] (nmpc.east) -- (132,8) |- (delay.west);
+\draw[flow] (base.east) -- (132,-8) |- (delay.west);
+\node at (130.2,2.4) {$\delta$};
+\node[blk, minimum width=21mm, minimum height=13mm, fill=black!5] (plant) at (161,0) {18-state model:\\rotor speeds,\\quaternion; RK4,\\100~Hz / 1~kHz};
+\draw[flow] (delay) -- (plant);
+\draw[flow, densely dashed] (160,16.5) -- (160,8.6);
+\node[anchor=east, inner sep=1pt] at (159.5,15.5) {OU force $f_w$};
+% true-state feedback, one arrow per controller
+\draw[flow] (169,8.6) -- (169,20) -- node[above, pos=0.5] {true state $x$ (no estimator)} (124,20) -- (124,12.5);
+\draw[flow] (155,-8.6) -- (155,-16) -- node[below, pos=0.5] {true state $x$} (113,-16) -- (base.south);
+% ---------------- D. evaluation
+\node[blk, minimum width=108mm, minimum height=8mm] (eval) at (120,-28)
+  {tracking RMSE $\cdot$ executed and planned energy $\cdot$ clearance to raw polygons $\cdot$ coverage\\solve time $\cdot$ divergence and inversions};
+\draw[flow] (70,-5) -- (70,-23.9);
+\draw[flow] (166,-8.6) -- (166,-23.9);
+% ---------------- E. auxiliary perception (offline, no feedback)
+\node[blk, draw=black!45, text=black!60, densely dotted, minimum width=46mm, minimum height=8mm] (perc) at (24,-28)
+  {five-band synthetic mosaic $\to$ NDVI/NDWI\\$\to$ health index $\to$ flagged zones};
+% ---------------- group frames and headers
+\begin{scope}[on background layer]
+\draw[grp, fill=blue!4] (-1,-7) rectangle (88,7);
+\draw[grp, fill=orange!6] (97,-14) rectangle (129,14);
+\draw[grp, fill=green!5] (148.5,-11) rectangle (173.5,11);
+\end{scope}
+\node[hdr] at (-1,7) {A\, mission planning};
+\node[hdr] at (97,14) {B\, flight control};
+\node[hdr] at (148.5,11) {C\, plant};
+\node[hdr] at (73,-23.5) {D\, evaluation};
+\node[hdr, text=black!55] at (1,-23.5) {E\, synthetic perception (auxiliary, offline)};
+\end{tikzpicture}

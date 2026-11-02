@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>multimodal_perception</name>
+  <version>1.0.0</version>
+  <description>Detección de plagas (YOLOv8), estrés hídrico (CWSI térmico) y estación terrena.</description>
+  <maintainer email="jose.segundo.m@uni.pe">José Luis Segundo Manayay</maintainer>
+  <license>MIT</license>
+  <author email="jose.segundo.m@uni.pe">José Luis Segundo Manayay</author>
+  <author>Luis Ángel Vilcamiche Fernández</author>
+  <buildtool_depend>ament_python</buildtool_depend>
+  <depend>rclpy</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>vision_msgs</depend>
+  <depend>cv_bridge</depend>
+  <!-- reuso de local_to_geodetic (misma transformación que planificó la misión) -->
+  <exec_depend>mission_planner</exec_depend>
+  <export><build_type>ament_python</build_type></export>
+</package>

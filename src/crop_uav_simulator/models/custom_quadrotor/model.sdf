@@ -1,0 +1,162 @@
+<?xml version="1.0" ?>
+<!-- Gemelo digital del quadrotor 250 mm de la tesis (parámetros del MIL:
+     uav_dynamics_casadi.py — masa 0.8 kg, Ixx=Iyy=4.9e-3, Izz=8.8e-3).
+     Visual: geometría simple. Las mallas iris*.dae no están en el sistema;
+     cuando Jose las provea, sustituir los <visual> por <mesh> en meshes/.
+     Sensores: cámara RGB nadir + cámara mono8 nadir ("térmica", convertida a
+     32FC1 K por thermal_bridge_node — Gazebo classic no tiene sensor térmico).
+     La actuación/odometría la resuelve quadrotor_actuation_plugin (IMU/GPS
+     dedicados no son necesarios para el SIL: el NMPC consume /uav/odom). -->
+<sdf version="1.6">
+  <model name="custom_quadrotor">
+    <link name="base_link">
+      <inertial>
+        <mass>0.80</mass>
+        <inertia>
+          <ixx>4.9e-3</ixx><iyy>4.9e-3</iyy><izz>8.8e-3</izz>
+          <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry><box><size>0.35 0.35 0.12</size></box></geometry>
+      </collision>
+
+      <!-- VISUAL a escala ~x5.5, estilo quadrotor profesional (cosmético:
+           la física sigue siendo la del 250 mm validado — NO escalar la
+           dinámica). Cuando Jose provea mallas, sustituir por <mesh>. -->
+      <!-- cuerpo blanco + tapa -->
+      <visual name="body">
+        <geometry><box><size>0.62 0.40 0.18</size></box></geometry>
+        <material><ambient>0.75 0.75 0.78 1</ambient><diffuse>0.92 0.92 0.95 1</diffuse></material>
+      </visual>
+      <visual name="body_top">
+        <pose>0.05 0 0.13 0 0 0</pose>
+        <geometry><box><size>0.40 0.28 0.10</size></box></geometry>
+        <material><ambient>0.60 0.60 0.63 1</ambient><diffuse>0.80 0.80 0.84 1</diffuse></material>
+      </visual>
+      <!-- nariz roja (orientación legible) -->
+      <visual name="nose">
+        <pose>0.33 0 0.02 0 0 0</pose>
+        <geometry><box><size>0.10 0.26 0.12</size></box></geometry>
+        <material><ambient>0.55 0.05 0.05 1</ambient><diffuse>0.85 0.08 0.08 1</diffuse></material>
+      </visual>
+      <!-- brazos negros a 45 (puntas en +-0.68) -->
+      <visual name="arm_fr"><pose>0.34 0.34 0.02 0 0 0.7854</pose>
+        <geometry><box><size>0.85 0.07 0.04</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.13 0.13 0.13 1</diffuse></material></visual>
+      <visual name="arm_fl"><pose>0.34 -0.34 0.02 0 0 -0.7854</pose>
+        <geometry><box><size>0.85 0.07 0.04</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.13 0.13 0.13 1</diffuse></material></visual>
+      <visual name="arm_br"><pose>-0.34 0.34 0.02 0 0 -0.7854</pose>
+        <geometry><box><size>0.85 0.07 0.04</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.13 0.13 0.13 1</diffuse></material></visual>
+      <visual name="arm_bl"><pose>-0.34 -0.34 0.02 0 0 0.7854</pose>
+        <geometry><box><size>0.85 0.07 0.04</size></box></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.13 0.13 0.13 1</diffuse></material></visual>
+      <!-- motores -->
+      <visual name="motor_fr"><pose>0.68 0.68 0.07 0 0 0</pose>
+        <geometry><cylinder><radius>0.06</radius><length>0.10</length></cylinder></geometry>
+        <material><ambient>0.10 0.10 0.10 1</ambient><diffuse>0.18 0.18 0.18 1</diffuse></material></visual>
+      <visual name="motor_fl"><pose>0.68 -0.68 0.07 0 0 0</pose>
+        <geometry><cylinder><radius>0.06</radius><length>0.10</length></cylinder></geometry>
+        <material><ambient>0.10 0.10 0.10 1</ambient><diffuse>0.18 0.18 0.18 1</diffuse></material></visual>
+      <visual name="motor_br"><pose>-0.68 0.68 0.07 0 0 0</pose>
+        <geometry><cylinder><radius>0.06</radius><length>0.10</length></cylinder></geometry>
+        <material><ambient>0.10 0.10 0.10 1</ambient><diffuse>0.18 0.18 0.18 1</diffuse></material></visual>
+      <visual name="motor_bl"><pose>-0.68 -0.68 0.07 0 0 0</pose>
+        <geometry><cylinder><radius>0.06</radius><length>0.10</length></cylinder></geometry>
+        <material><ambient>0.10 0.10 0.10 1</ambient><diffuse>0.18 0.18 0.18 1</diffuse></material></visual>
+      <!-- helices de 2 palas (delanteras naranja, traseras negras) -->
+      <visual name="prop_fr_a"><pose>0.68 0.68 0.125 0 0 0.5</pose>
+        <geometry><box><size>0.62 0.05 0.012</size></box></geometry>
+        <material><ambient>0.60 0.30 0.02 1</ambient><diffuse>0.95 0.50 0.05 1</diffuse></material></visual>
+      <visual name="prop_fl_a"><pose>0.68 -0.68 0.125 0 0 -0.5</pose>
+        <geometry><box><size>0.62 0.05 0.012</size></box></geometry>
+        <material><ambient>0.60 0.30 0.02 1</ambient><diffuse>0.95 0.50 0.05 1</diffuse></material></visual>
+      <visual name="prop_br_a"><pose>-0.68 0.68 0.125 0 0 -0.5</pose>
+        <geometry><box><size>0.62 0.05 0.012</size></box></geometry>
+        <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material></visual>
+      <visual name="prop_bl_a"><pose>-0.68 -0.68 0.125 0 0 0.5</pose>
+        <geometry><box><size>0.62 0.05 0.012</size></box></geometry>
+        <material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.12 0.12 0.12 1</diffuse></material></visual>
+      <!-- patas -->
+      <visual name="leg_l"><pose>0 0.22 -0.19 1.0 0 0</pose>
+        <geometry><box><size>0.40 0.04 0.22</size></box></geometry>
+        <material><ambient>0.12 0.12 0.12 1</ambient><diffuse>0.2 0.2 0.2 1</diffuse></material></visual>
+      <visual name="leg_r"><pose>0 -0.22 -0.19 -1.0 0 0</pose>
+        <geometry><box><size>0.40 0.04 0.22</size></box></geometry>
+        <material><ambient>0.12 0.12 0.12 1</ambient><diffuse>0.2 0.2 0.2 1</diffuse></material></visual>
+      <visual name="skid_l"><pose>0 0.31 -0.28 1.5708 0 1.5708</pose>
+        <geometry><cylinder><radius>0.025</radius><length>0.62</length></cylinder></geometry>
+        <material><ambient>0.12 0.12 0.12 1</ambient><diffuse>0.2 0.2 0.2 1</diffuse></material></visual>
+      <visual name="skid_r"><pose>0 -0.31 -0.28 1.5708 0 1.5708</pose>
+        <geometry><cylinder><radius>0.025</radius><length>0.62</length></cylinder></geometry>
+        <material><ambient>0.12 0.12 0.12 1</ambient><diffuse>0.2 0.2 0.2 1</diffuse></material></visual>
+      <!-- gimbal con lente -->
+      <visual name="gimbal"><pose>0.16 0 -0.16 0 0 0</pose>
+        <geometry><box><size>0.14 0.14 0.11</size></box></geometry>
+        <material><ambient>0.1 0.1 0.1 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual>
+      <visual name="lens"><pose>0.16 0 -0.235 0 0 0</pose>
+        <geometry><cylinder><radius>0.04</radius><length>0.035</length></cylinder></geometry>
+        <material><ambient>0.02 0.02 0.06 1</ambient><diffuse>0.05 0.05 0.12 1</diffuse></material></visual>
+
+      <!-- Cámara RGB nadir (mirando -z: pitch +90°) -->
+      <sensor type="camera" name="rgb_camera">
+        <pose>0 0 -0.05 0 1.5708 0</pose>
+        <update_rate>5</update_rate>
+        <camera>
+          <horizontal_fov>0.7505</horizontal_fov> <!-- ~43° (8 mm, sensor 6.3 mm) -->
+          <image><width>640</width><height>480</height><format>R8G8B8</format></image>
+          <clip><near>0.1</near><far>300</far></clip>
+        </camera>
+        <plugin name="rgb_camera_controller" filename="libgazebo_ros_camera.so">
+          <ros><namespace>/uav/camera</namespace></ros>
+          <camera_name>rgb</camera_name>
+          <frame_name>rgb_camera_link</frame_name>
+        </plugin>
+      </sensor>
+
+      <!-- Cámara "térmica" nadir: mono8; thermal_bridge_node la convierte a
+           32FC1 [K] en /uav/camera/thermal/image_raw (contrato §2). -->
+      <sensor type="camera" name="thermal_camera">
+        <pose>0 0 -0.05 0 1.5708 0</pose>
+        <update_rate>5</update_rate>
+        <camera>
+          <horizontal_fov>0.7505</horizontal_fov>
+          <image><width>320</width><height>240</height><format>L8</format></image>
+          <clip><near>0.1</near><far>300</far></clip>
+        </camera>
+        <plugin name="thermal_camera_controller" filename="libgazebo_ros_camera.so">
+          <ros><namespace>/uav/camera</namespace></ros>
+          <camera_name>thermal_8u</camera_name>
+          <frame_name>thermal_camera_link</frame_name>
+        </plugin>
+      </sensor>
+
+      <!-- Cámara de observación (tercera persona). Instrumento de la simulación,
+           NO carga útil: no alimenta percepción ni control, solo documenta la
+           misión. Rígida al fuselaje y 3/4 por detrás-izquierda, de modo que el
+           vehículo queda encuadrado y el cultivo desfila debajo.
+           Publica en /sim/chase/image_raw. -->
+      <sensor type="camera" name="chase_camera">
+        <pose>-2.4 -1.2 1.0 0 0.357 0.464</pose>
+        <update_rate>10</update_rate>
+        <camera>
+          <horizontal_fov>1.4</horizontal_fov> <!-- ~80°: vehículo + contexto -->
+          <image><width>960</width><height>540</height><format>R8G8B8</format></image>
+          <clip><near>0.05</near><far>400</far></clip>
+        </camera>
+        <plugin name="chase_camera_controller" filename="libgazebo_ros_camera.so">
+          <ros><namespace>/sim</namespace></ros>
+          <camera_name>chase</camera_name>
+          <frame_name>chase_camera_link</frame_name>
+        </plugin>
+      </sensor>
+    </link>
+
+    <!-- Plugin de motores: PWM -> rotores 1er orden -> mezcla X -> fuerzas
+         + drag + viento (modelo MIL). Publica /uav/odom. -->
+    <plugin name="quadrotor_actuation" filename="libquadrotor_actuation_plugin.so"/>
+  </model>
+</sdf>
